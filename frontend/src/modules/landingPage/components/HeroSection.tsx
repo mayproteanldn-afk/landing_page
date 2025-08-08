@@ -1,4 +1,4 @@
-import brandLogo from '../../../assets/BrandLogoBrown.png';
+import brandLogo from "@/assets/testerhero.png"
 
 const BeautifulWelcomeSection = () => {
   return (
