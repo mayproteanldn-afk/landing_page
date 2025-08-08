@@ -8,7 +8,7 @@ const BeautifulWelcomeSection = () => {
         backgroundImage: "url('/src/assets/testerhero.png')"
       }}
     >
-      {/* Overlay for soft white effect */}
+      {/* Overlay for soft white effecdddddt */}
       <div className="absolute inset-0 [background-color:#FFFCF3]/15 backdrop-blur-sm"></div>
 
       {/* Main content */}
