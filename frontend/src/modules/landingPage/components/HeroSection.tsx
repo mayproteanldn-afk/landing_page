@@ -1,11 +1,12 @@
-import brandLogo from "@/assets/testerhero.png"
+import brandLogo from "../../../assets/BrandLogoBrown.png"
+import backgroundImage from "../../../assets/testerhero.png"
 
 const BeautifulWelcomeSection = () => {
   return (
     <section
       className="relative min-h-screen w-full bg-cover bg-center flex flex-col justify-center items-center px-6 py-16 font-sans"
       style={{
-        backgroundImage: "url('/src/assets/testerhero.png')"
+  backgroundImage: `url(${backgroundImage})`
       }}
     >
       {/* Overlay for soft white effecdddddt */}
