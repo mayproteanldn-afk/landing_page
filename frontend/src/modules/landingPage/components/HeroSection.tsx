@@ -1,4 +1,6 @@
 import  { useState, useEffect } from 'react';
+import WaitlistUpForm from '../../../components/forms/WaitlistForm';
+
 
 const BeautifulWelcomeSection = () => {
   // Sample user data
@@ -46,8 +48,8 @@ const BeautifulWelcomeSection = () => {
       {/* Logo/Branding */}
       <div className="flex flex-col items-center mb-8">
         <img 
-          className="h-12 w-12 rounded-full object-cover mb-4 border border-gray-200"
-          src="https://images.unsplash.com/photo-1743883986319-bebbb3a897da?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8" 
+          className="h-32 w-48  object-cover mb-4 border border-gray-200"
+          src={"https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ALEGO_logo.svg&psig=AOvVaw1SnUlHIkTAzVcZhi8zojCj&ust=1754740042113000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCOC3spmS-44DFQAAAAAdAAAAABAL"} 
           alt="Brand logo"
         />
         <span className="text-sm text-gray-500 tracking-wider">AVAILABLE IN EARLY 2025</span>
@@ -63,18 +65,7 @@ const BeautifulWelcomeSection = () => {
         </p>
 
         {/* Email Input */}
-        <div className="max-w-md mx-auto mb-12">
-          <div className="relative">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full px-6 py-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent text-gray-700 placeholder-gray-400"
-            />
-            <button className="absolute right-2 top-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-2 rounded-full transition-colors">
-              Join
-            </button>
-          </div>
-        </div>
+        <WaitlistUpForm/>
 
         {/* Joined Users */}
         <div className="mb-16">
