@@ -9,6 +9,7 @@ django-cors-headers = "*"
 python-decouple = "*"
 gunicorn = "*"
 whitenoise = "*"
+psycopg = {extras = ["binary"], version = "*"}
 
 [dev-packages]
 

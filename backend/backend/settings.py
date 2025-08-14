@@ -70,11 +70,20 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # DB (sqlite por ahora)
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": config("POSTGRES_DB", default="db"),
+        "USER": config("POSTGRES_USER", default="db"),
+        "PASSWORD": config("POSTGRES_PASSWORD", default="REDACTED"),
+        "HOST": config("POSTGRES_HOST", default="app-379f226d-4c2b-4d6e-bbc8-5ed3dafbb4b1-do-user-24517003-0.d.db.ondigitalocean.com"),
+        "PORT": config("POSTGRES_PORT", default="25060"),
+        "CONN_MAX_AGE": 600,
+        "OPTIONS": {
+            "sslmode": config("POSTGRES_SSLMODE", default="require")
+        },
     }
 }
+
 
 # Password validators
 AUTH_PASSWORD_VALIDATORS = [
