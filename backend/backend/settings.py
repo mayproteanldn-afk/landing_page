@@ -72,16 +72,32 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # backend/backend/settings.py  (NEW — uses environment variables)
 import os  # make sure this import is present near the top of the file
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': os.environ.get('DB_HOST', ''),
-        'PORT': os.environ.get('DB_PORT', '5432'),
-        'USER': os.environ.get('DB_USER', ''),
-        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
-        'NAME': os.environ.get('DB_NAME', ''),
+# backend/backend/settings.py
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+if os.environ.get('DB_HOST'):  # Use Postgres if env vars are present
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'HOST': os.environ.get('DB_HOST', ''),
+            'PORT': os.environ.get('DB_PORT', '25060'),  # DO default; harmless elsewhere
+            'USER': os.environ.get('DB_USER', ''),
+            'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+            'NAME': os.environ.get('DB_NAME', ''),
+            'OPTIONS': {'sslmode': os.environ.get('DB_SSLMODE', 'require')},
+        }
     }
-}
+else:  # Fallback: local SQLite file, no secrets needed
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+
 
 
 
