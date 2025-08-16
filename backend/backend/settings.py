@@ -69,20 +69,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 # DB (sqlite por ahora)
+# backend/backend/settings.py  (NEW — uses environment variables)
+import os  # make sure this import is present near the top of the file
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": config("POSTGRES_DB", default="db"),
-        "USER": config("POSTGRES_USER", default="db"),
-        "PASSWORD": config("POSTGRES_PASSWORD", default="REDACTED"),
-        "HOST": config("POSTGRES_HOST", default="app-379f226d-4c2b-4d6e-bbc8-5ed3dafbb4b1-do-user-24517003-0.d.db.ondigitalocean.com"),
-        "PORT": config("POSTGRES_PORT", default="25060"),
-        "CONN_MAX_AGE": 600,
-        "OPTIONS": {
-            "sslmode": config("POSTGRES_SSLMODE", default="require")
-        },
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': os.environ.get('DB_HOST', ''),
+        'PORT': os.environ.get('DB_PORT', '5432'),
+        'USER': os.environ.get('DB_USER', ''),
+        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+        'NAME': os.environ.get('DB_NAME', ''),
     }
 }
+
 
 
 # Password validators
