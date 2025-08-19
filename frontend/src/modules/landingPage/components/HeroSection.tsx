@@ -57,7 +57,7 @@ const BeautifulWelcomeSection = () => {
                              [background-color:#FFFCF3] [color:#4B2C1A] font-semibold
                              hover:[background-color:#e9e2d1] transition-colors"
                 >
-                  Get me in now
+                  Get me in
                 </button>
               </div>
             </div>
