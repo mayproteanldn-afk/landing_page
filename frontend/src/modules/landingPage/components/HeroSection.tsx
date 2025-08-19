@@ -6,8 +6,7 @@ const BeautifulWelcomeSection = () => {
     <section className="[background-color:#FFFCF3] w-full font-sans">
       <div className="mx-auto max-w-7xl px-6 py-10 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
-
-          {/* LEFT: Hero Image */}
+          {/* Image: below on mobile, left on desktop (swap order at md) */}
           <div className="order-2 md:order-1">
             <img
               src={heroGraphic}
@@ -17,8 +16,8 @@ const BeautifulWelcomeSection = () => {
             />
           </div>
 
-          {/* RIGHT: Logo + text + inline email */}
-          <div className="order-1 md:order-2 text-center md:text-left">
+          {/* Content: centered on mobile, left on desktop */}
+          <div className="order-1 md:order-2 text-center md:text-left mx-auto md:mx-0">
             {/* Brand Logo */}
             <div className="flex justify-center md:justify-start mb-4">
               <img
@@ -38,24 +37,29 @@ const BeautifulWelcomeSection = () => {
               Get Secret Access
             </h1>
 
-            {/* Subheading */}
-            <p className="[color:#4B2C1A] text-lg md:text-xl max-w-xl md:max-w-none mx-auto md:mx-0 mb-8">
-              Priority access and exclusive discount codes... Join the waitlist now!
-            </p>
+            {/* Shared width wrapper: centers copy + form on mobile */}
+            <div className="max-w-xl mx-auto md:mx-0">
+              <p className="[color:#4B2C1A] text-lg md:text-xl mb-8">
+                Priority access and exclusive discount codes... Join the waitlist now!
+              </p>
 
-            {/* Email input with inline button */}
-            <div className="max-w-md md:max-w-lg flex flex-col sm:flex-row items-center gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-4 rounded-full border border-transparent focus:outline-none focus:ring-2 focus:ring-gray-300
-                           [background-color:#013220] [color:#FFFCF3] [placeholder-color:#FFFCF3]"
-              />
-              <button
-                className="px-6 py-4 rounded-full border-2 [border-color:#4B2C1A] [background-color:#FFFCF3] [color:#4B2C1A] font-semibold hover:[background-color:#e9e2d1] transition-colors"
-              >
-                Get me in now
-              </button>
+              {/* Form: centered on mobile, left on desktop */}
+              <div className="flex flex-col sm:flex-row items-center md:items-stretch justify-center md:justify-start gap-4">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 w-full px-6 py-4 rounded-full border border-transparent
+                             focus:outline-none focus:ring-2 focus:ring-gray-300
+                             [background-color:#013220] [color:#FFFCF3] [placeholder-color:#FFFCF3]"
+                />
+                <button
+                  className="px-6 py-4 rounded-full border-2 [border-color:#4B2C1A]
+                             [background-color:#FFFCF3] [color:#4B2C1A] font-semibold
+                             hover:[background-color:#e9e2d1] transition-colors"
+                >
+                  Get me in now
+                </button>
+              </div>
             </div>
           </div>
         </div>
