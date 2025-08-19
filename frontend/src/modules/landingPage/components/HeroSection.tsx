@@ -3,14 +3,14 @@ import heroGraphic from "../../../assets/testerhero.png";
 
 const BeautifulWelcomeSection = () => {
   return (
-    <section className="[background-color:#FFFCF3] w-full font-sans">
+    <section className="min-h-screen [background-color:#FFFCF3] w-full font-sans">
       <div className="mx-auto max-w-7xl px-6 py-10 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
-          {/* Image: below on mobile, left on desktop (swap order at md) */}
-          <div className="order-2 md:order-1">
+          {/* Image: below on mobile, left on desktop */}
+          <div className="order-2 md:order-1 mb-8 md:mb-0">
             <img
               src={heroGraphic}
-              alt="Hero"
+              alt="Iced bubble-tea protein shakes"
               className="w-full h-[260px] md:h-[520px] object-cover rounded-xl"
               style={{ objectPosition: "center" }}
             />
@@ -22,7 +22,7 @@ const BeautifulWelcomeSection = () => {
             <div className="flex justify-center md:justify-start mb-4">
               <img
                 src={brandLogo}
-                alt="Brand logo"
+                alt="Protean LDN logo"
                 className="h-36 w-36 rounded-full object-cover border border-white-200"
               />
             </div>
@@ -53,11 +53,12 @@ const BeautifulWelcomeSection = () => {
                              [background-color:#013220] [color:#FFFCF3] [placeholder-color:#FFFCF3]"
                 />
                 <button
+                  type="button"
                   className="px-6 py-4 rounded-full border-2 [border-color:#4B2C1A]
                              [background-color:#FFFCF3] [color:#4B2C1A] font-semibold
                              hover:[background-color:#e9e2d1] transition-colors"
                 >
-                  Get me in
+                  Get me in now
                 </button>
               </div>
             </div>
