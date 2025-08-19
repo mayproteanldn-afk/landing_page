@@ -6,7 +6,7 @@ const BeautifulWelcomeSection = () => {
     <section
       className="relative min-h-screen w-full bg-cover bg-center flex flex-col justify-center items-center px-6 py-16 font-sans"
       style={{
-  backgroundImage: `url(${backgroundImage})`
+        backgroundImage: `url(${backgroundImage})`
       }}
     >
       {/* Overlay for soft white effecdddddt */}
