@@ -17,7 +17,7 @@ export default function BeautifulWelcomeSection() {
         backgroundPosition: "center",
       }}
     >
-      {/* Main content */}
+      {/* Main content grows, footer stays low */}
       <div className="flex-1 mx-auto max-w-7xl px-6 pt-8 md:pt-12 pb-4">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-10">
           {/* VIDEO: bottom on mobile, left on desktop — never cropped */}
@@ -52,9 +52,9 @@ export default function BeautifulWelcomeSection() {
               />
             </div>
 
-            {/* Launch line + Instagram icon (to the right) */}
+            {/* Launch line + Instagram icon (inline, to the right) */}
             <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
-              <span className="text-xs md:text-sm tracking-wider text-[#4B2C1A]">
+              <span className="block text-xs md:text-sm tracking-wider text-[#4B2C1A]">
                 LAUNCHING JANUARY 2026
               </span>
               <a
@@ -62,11 +62,11 @@ export default function BeautifulWelcomeSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Protean LDN on Instagram"
-                className="inline-flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-full bg-white/70 hover:bg-white transition shadow-sm"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/70 hover:bg-white transition shadow-sm"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-4.5 h-4.5 md:w-5 md:h-5"
+                  className="w-5 h-5"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="#4B2C1A"
@@ -79,25 +79,25 @@ export default function BeautifulWelcomeSection() {
               </a>
             </div>
 
-            {/* Headline */}
+            {/* Headline — (unchanged sizes) */}
             <div className="leading-[0.9] mb-4">
               <h1
                 className="text-[#4B2C1A] font-black
-                           text-[clamp(2.25rem,5vw,4rem)]
-                           md:text-[clamp(3rem,4.5vw,4.5rem)]"
+                             text-[clamp(2.25rem,5vw,4rem)]
+                             md:text-[clamp(3rem,4.5vw,4.5rem)]"
               >
                 PROTEIN
               </h1>
               <h2
                 className="text-[#2F7A43] font-black
-                           text-[clamp(2.25rem,5vw,4rem)]
-                           md:text-[clamp(3rem,4.5vw,4.5rem)]"
+                             text-[clamp(2.25rem,5vw,4rem)]
+                             md:text-[clamp(3rem,4.5vw,4.5rem)]"
               >
                 BUBBLE TEA
               </h2>
             </div>
 
-            {/* Copy */}
+            {/* Copy block — (unchanged) */}
             <div className="max-w-2xl mx-auto md:mx-0 text-[#4B2C1A]">
               <p className="text-base md:text-lg mb-2">
                 Your new favourite protein shake is about to taste like bubble tea.
@@ -107,7 +107,7 @@ export default function BeautifulWelcomeSection() {
                 Sign up to our waitlist now for priority access and secret discount codes.
               </p>
 
-              {/* Email form */}
+              {/* Email form (unchanged) */}
               <div className="flex flex-col sm:flex-row items-center md:items-stretch justify-center md:justify-start gap-3">
                 <input
                   type="email"
@@ -125,15 +125,15 @@ export default function BeautifulWelcomeSection() {
                   Get me in now
                 </button>
               </div>
-
-              {/* Copyright moved up so it's always visible */}
-              <p className="mt-6 md:mt-7 text-center md:text-left text-[11px] md:text-xs text-[#4B2C1A]">
-                ©{new Date().getFullYear()} Protean LDN. All rights reserved.
-              </p>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Footer pulled slightly up so it's in view at 100% */}
+      <footer className="pb-2 text-center text-[11px] md:text-xs text-[#4B2C1A]">
+        ©{new Date().getFullYear()} Protean LDN. All rights reserved.
+      </footer>
     </section>
   );
 }
