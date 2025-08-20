@@ -52,52 +52,26 @@ export default function BeautifulWelcomeSection() {
               />
             </div>
 
-            {/* Launch line + Instagram icon (inline, to the right) */}
-            <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
-              <span className="block text-xs md:text-sm tracking-wider text-[#4B2C1A]">
-                LAUNCHING JANUARY 2026
-              </span>
-              <a
-                href="https://www.instagram.com/proteanldn/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Protean LDN on Instagram"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/70 hover:bg-white transition shadow-sm"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#4B2C1A"
-                  strokeWidth="1.8"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <circle cx="17.5" cy="6.5" r="1.25" fill="#4B2C1A" stroke="none" />
-                </svg>
-              </a>
-            </div>
+            {/* Launch line */}
+            <span className="block text-xs md:text-sm tracking-wider mb-3 text-[#4B2C1A]">
+              LAUNCHING JANUARY 2026
+            </span>
 
-            {/* Headline — (unchanged sizes) */}
+            {/* Headline — slightly smaller to fit above the fold */}
             <div className="leading-[0.9] mb-4">
-              <h1
-                className="text-[#4B2C1A] font-black
+              <h1 className="text-[#4B2C1A] font-black
                              text-[clamp(2.25rem,5vw,4rem)]
-                             md:text-[clamp(3rem,4.5vw,4.5rem)]"
-              >
+                             md:text-[clamp(3rem,4.5vw,4.5rem)]">
                 PROTEIN
               </h1>
-              <h2
-                className="text-[#2F7A43] font-black
+              <h2 className="text-[#2F7A43] font-black
                              text-[clamp(2.25rem,5vw,4rem)]
-                             md:text-[clamp(3rem,4.5vw,4.5rem)]"
-              >
+                             md:text-[clamp(3rem,4.5vw,4.5rem)]">
                 BUBBLE TEA
               </h2>
             </div>
 
-            {/* Copy block — (unchanged) */}
+            {/* Copy block — slightly tighter */}
             <div className="max-w-2xl mx-auto md:mx-0 text-[#4B2C1A]">
               <p className="text-base md:text-lg mb-2">
                 Your new favourite protein shake is about to taste like bubble tea.
@@ -107,7 +81,7 @@ export default function BeautifulWelcomeSection() {
                 Sign up to our waitlist now for priority access and secret discount codes.
               </p>
 
-              {/* Email form (unchanged) */}
+              {/* Email form */}
               <div className="flex flex-col sm:flex-row items-center md:items-stretch justify-center md:justify-start gap-3">
                 <input
                   type="email"
@@ -128,10 +102,34 @@ export default function BeautifulWelcomeSection() {
             </div>
           </div>
         </div>
+
+        {/* Social: centred Instagram icon (tighter spacing) */}
+        <div className="mt-6 md:mt-7 flex justify-center">
+          <a
+            href="https://www.instagram.com/proteanldn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Protean LDN on Instagram"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/70 hover:bg-white transition shadow-sm"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#4B2C1A"
+              strokeWidth="1.8"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <circle cx="17.5" cy="6.5" r="1.25" fill="#4B2C1A" stroke="none" />
+            </svg>
+          </a>
+        </div>
       </div>
 
-      {/* Footer pulled slightly up so it's in view at 100% */}
-      <footer className="pb-2 text-center text-[11px] md:text-xs text-[#4B2C1A]">
+      {/* Footer pinned near the bottom */}
+      <footer className="pb-3 text-center text-[11px] md:text-xs text-[#4B2C1A]">
         ©{new Date().getFullYear()} Protean LDN. All rights reserved.
       </footer>
     </section>
