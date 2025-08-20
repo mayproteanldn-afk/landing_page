@@ -5,3 +5,5 @@
 *.env.*
 /backend/.env
 /backend/.env.local
+
+replacements.txt
