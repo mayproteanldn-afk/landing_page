@@ -9,7 +9,6 @@ const videoSrc = "/videos/hero.mp4";
 export default function BeautifulWelcomeSection() {
   return (
     <section
-      // KEY FIXES: w-screen, min-h-dvh, bg-no-repeat, overflow-x-hidden
       className="w-screen min-h-dvh overflow-x-hidden font-sans bg-center bg-cover bg-no-repeat flex flex-col"
       style={{
         backgroundImage: `url(${bgImage})`,
@@ -19,7 +18,7 @@ export default function BeautifulWelcomeSection() {
       }}
     >
       {/* Main content grows, footer stays low */}
-      <div className="flex-1 mx-auto max-w-7xl px-6 pt-10 md:pt-16 pb-6">
+      <div className="flex-1 mx-auto max-w-7xl px-6 pt-10 md:pt-16 pb-3">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
           {/* VIDEO: bottom on mobile, left on desktop — NEVER CROPPED */}
           <div className="order-2 md:order-1 mb-8 md:mb-0">
@@ -50,10 +49,32 @@ export default function BeautifulWelcomeSection() {
               />
             </div>
 
-            {/* Launch line */}
-            <span className="block text-sm tracking-wider mb-5 text-[#4B2C1A]">
-              LAUNCHING JANUARY 2026
-            </span>
+            {/* Launch line + Instagram icon (to the right) */}
+            <div className="flex items-center justify-center md:justify-start gap-3 mb-5">
+              <span className="block text-sm tracking-wider text-[#4B2C1A]">
+                LAUNCHING JANUARY 2026
+              </span>
+              <a
+                href="https://www.instagram.com/proteanldn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Protean LDN on Instagram"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/70 hover:bg-white transition shadow-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#4B2C1A"
+                  strokeWidth="1.8"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <circle cx="17.5" cy="6.5" r="1.25" fill="#4B2C1A" stroke="none" />
+                </svg>
+              </a>
+            </div>
 
             {/* BIG HEADLINE */}
             <div className="display-font leading-[0.9] mb-6">
@@ -97,32 +118,10 @@ export default function BeautifulWelcomeSection() {
           </div>
         </div>
 
-        {/* Social: centred Instagram icon */}
-        <div className="mt-8 md:mt-10 flex justify-center">
-          <a
-            href="https://www.instagram.com/proteanldn/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Protean LDN on Instagram"
-            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/70 hover:bg-white transition shadow-sm"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#4B2C1A"
-              strokeWidth="1.8"
-            >
-              <rect x="3" y="3" width="18" height="18" rx="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <circle cx="17.5" cy="6.5" r="1.25" fill="#4B2C1A" stroke="none" />
-            </svg>
-          </a>
-        </div>
+        {/* (removed the old centered IG block) */}
       </div>
 
-      {/* Footer pinned near the bottom by the flex layout */}
+      {/* Footer pinned near the bottom by the flex layout, kept in view */}
       <footer className="pb-4 text-center text-xs text-[#4B2C1A]">
         ©{new Date().getFullYear()} Protean LDN. All rights reserved.
       </footer>
