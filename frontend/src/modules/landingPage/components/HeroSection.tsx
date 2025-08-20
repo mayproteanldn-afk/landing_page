@@ -17,8 +17,8 @@ export default function BeautifulWelcomeSection() {
         backgroundPosition: "center",
       }}
     >
-      {/* Main content grows, footer stays low */}
-      <div className="flex-1 mx-auto max-w-7xl px-6 pt-8 md:pt-10 pb-3">
+      {/* Main content — reduced top/bottom padding to move everything up */}
+      <div className="flex-1 mx-auto max-w-7xl px-6 pt-4 md:pt-6 pb-1">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
           {/* VIDEO: bottom on mobile, left on desktop — NEVER CROPPED */}
           <div className="order-2 md:order-1 mb-8 md:mb-0">
@@ -40,77 +40,87 @@ export default function BeautifulWelcomeSection() {
 
           {/* CONTENT: top on mobile, right on desktop */}
           <div className="order-1 md:order-2 text-center md:text-left mx-auto md:mx-0">
-            {/* --- RIGHT SIDE ~20% SMALLER ON DESKTOP --- */}
-            <div className="md:[&>*]:scale-100 md:[&_h1]:text-7xl md:[&_h2]:text-7xl">
-              {/* Logo (thin gold circle border) */}
-              <div className="flex justify-center md:justify-start mb-5">
-                <img
-                  src={brandLogo}
-                  alt="Protean LDN logo"
-                  /* 20% smaller on desktop */
-                  className="h-28 w-28 md:h-28 md:w-28 rounded-full object-cover border-[1.5px] [border-color:#D4AF37]"
+            {/* Logo (thin gold circle border) */}
+            <div className="flex justify-center md:justify-start mb-6">
+              <img
+                src={brandLogo}
+                alt="Protean LDN logo"
+                className="h-36 w-36 rounded-full object-cover border-[1.5px] [border-color:#D4AF37]"
+              />
+            </div>
+
+            {/* Launch line + Instagram icon (to the right) */}
+            <div className="flex items-center justify-center md:justify-start gap-3 mb-5">
+              <span className="block text-sm tracking-wider text-[#4B2C1A]">
+                LAUNCHING JANUARY 2026
+              </span>
+              <a
+                href="https://www.instagram.com/proteanldn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Protean LDN on Instagram"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/70 hover:bg-white transition shadow-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#4B2C1A"
+                  strokeWidth="1.8"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <circle cx="17.5" cy="6.5" r="1.25" fill="#4B2C1A" stroke="none" />
+                </svg>
+              </a>
+            </div>
+
+            {/* BIG HEADLINE */}
+            <div className="display-font leading-[0.9] mb-6">
+              <h1 className="text-[#4B2C1A] font-black text-6xl md:text-8xl">
+                PROTEIN
+              </h1>
+              <h2 className="text-[#2F7A43] font-black text-6xl md:text-8xl">
+                BUBBLE TEA
+              </h2>
+            </div>
+
+            {/* Copy block */}
+            <div className="max-w-2xl mx-auto md:mx-0 text-[#4B2C1A]">
+              <p className="text-lg md:text-xl mb-3">
+                Your new favourite protein shake is about to taste like bubble tea.
+                Real tea, real benefits.
+              </p>
+              <p className="italic text-lg md:text-xl mb-8">
+                Sign up to our waitlist now for priority access and secret discount codes.
+              </p>
+
+              {/* Email form */}
+              <div className="flex flex-col sm:flex-row items-center md:items-stretch justify-center md:justify-start gap-4">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 w-full px-6 py-4 rounded-full border border-transparent
+                             focus:outline-none focus:ring-2 focus:ring-gray-300
+                             [background-color:#013220] [color:#FFFCF3] [placeholder-color:#FFFCF3]"
                 />
-              </div>
-
-              {/* Launch line */}
-              <div className="flex items-center gap-2 md:gap-3 mb-4">
-                <span className="block text-xs md:text-xs tracking-wider text-[#4B2C1A]">
-                  LAUNCHING JANUARY 2026
-                </span>
-                {/* If you currently position the Instagram icon here, leave it as-is in your project */}
-              </div>
-
-              {/* BIG HEADLINE (≈20% smaller on desktop) */}
-              <div className="leading-[0.9] mb-5">
-                <h1 className="text-[#4B2C1A] font-black text-5xl md:text-7xl">
-                  PROTEIN
-                </h1>
-                <h2 className="text-[#2F7A43] font-black text-5xl md:text-7xl">
-                  BUBBLE TEA
-                </h2>
-              </div>
-
-              {/* Copy block (slightly smaller/tighter on desktop) */}
-              <div className="max-w-2xl mx-auto md:mx-0 text-[#4B2C1A]">
-                <p className="text-base md:text-lg mb-2">
-                  Your new favourite protein shake is about to taste like bubble tea.
-                  Real tea, real benefits.
-                </p>
-                <p className="italic text-base md:text-lg mb-5">
-                  Sign up to our waitlist now for priority access and secret discount codes.
-                </p>
-
-                {/* Email form (compact padding on desktop) */}
-                <div className="flex flex-col sm:flex-row items-center md:items-stretch justify-center md:justify-start gap-3">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 w-full px-6 py-3 rounded-full border border-transparent
-                               focus:outline-none focus:ring-2 focus:ring-gray-300
-                               [background-color:#013220] [color:#FFFCF3] [placeholder-color:#FFFCF3]"
-                  />
-                  <button
-                    type="button"
-                    className="px-6 py-3 rounded-full border-2 [border-color:#4B2C1A]
-                               [background-color:#FFFCF3] [color:#4B2C1A] font-semibold
-                               hover:[background-color:#e9e2d1] transition-colors"
-                  >
-                    Get me in now
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  className="px-6 py-4 rounded-full border-2 [border-color:#4B2C1A]
+                             [background-color:#FFFCF3] [color:#4B2C1A] font-semibold
+                             hover:[background-color:#e9e2d1] transition-colors"
+                >
+                  Get me in now
+                </button>
               </div>
             </div>
-            {/* --- END RIGHT SIDE SCALE --- */}
           </div>
         </div>
-
-        {/* If you also render a centred Instagram icon below, keep it.
-            No changes here since the ask is only to shrink right side + lift copyright. */}
       </div>
 
-      {/* Footer pinned near the bottom by the flex layout.
-          Lift it up a touch on desktop so it stays in view at 100% zoom. */}
-      <footer className="pb-2 md:pb-2 text-center text-xs text-[#4B2C1A] md:-mt-6">
+      {/* Footer kept in view by reduced spacing above + small bottom padding */}
+      <footer className="pb-2 text-center text-xs text-[#4B2C1A]">
         ©{new Date().getFullYear()} Protean LDN. All rights reserved.
       </footer>
     </section>
