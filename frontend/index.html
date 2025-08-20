@@ -1,31 +1,44 @@
 <!doctype html>
 <html lang="en-GB" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Protean LDN — bubble tea–inspired protein powders</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Protean LDN — bubble tea–inspired protein powders</title>
-  <meta name="description"
-    content="Real tea–infused, bubble tea–inspired protein powders (22–25g protein per serving). Launching with matcha latte, brown sugar milk tea, and fruit tea. Virtually lactose-free." />
-  <link rel="canonical" href="https://www.proteanldn.co.uk/" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <meta property="og:title" content="Protean LDN — bubble tea–inspired protein powders" />
-  <meta property="og:description"
-    content="Real tea–infused, bubble tea–inspired protein powders (22–25g protein per serving)." />
-  <meta property="og:image" content="https://www.proteanldn.co.uk/og.jpg" />
-  <meta property="og:url" content="https://www.proteanldn.co.uk/" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Protean LDN — bubble tea–inspired protein powders" />
-  <meta name="twitter:description"
-    content="Real tea–infused, bubble tea–inspired protein powders (22–25g protein per serving)." />
-  <meta name="twitter:image" content="https://www.proteanldn.co.uk/og.jpg" />
-</head>
-<!-- Keep a neutral fallback color; background image is set in React -->
+    <!-- SEO -->
+    <meta name="description" content="Real tea–infused, bubble tea–inspired protein powders (22–25g protein per serving). Launching with matcha latte, brown sugar milk tea, and fruit tea. Virtually lactose-free." />
+    <link rel="canonical" href="https://www.proteanldn.co.uk/" />
 
-<body class="min-h-screen bg-[#FFFCF3]">
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
+    <!-- ✅ Favicon (your file in frontend/public) -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
 
+    <!-- Social -->
+    <meta property="og:title" content="Protean LDN — bubble tea–inspired protein powders" />
+    <meta property="og:description" content="Real tea–infused, bubble tea–inspired protein powders (22–25g protein per serving)." />
+    <meta property="og:image" content="https://www.proteanldn.co.uk/og.jpg" />
+    <meta property="og:url" content="https://www.proteanldn.co.uk/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts (Fraunces = display, Inter = body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Simple font helpers -->
+    <style>
+      :root{
+        --brand-brown:#4B2C1A;
+        --brand-green:#2F7A43;
+      }
+      body{ font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+      .display-font{ font-family: 'Fraunces', serif; }
+    </style>
+  </head>
+  <body class="min-h-screen bg-[#FFFCF3]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
