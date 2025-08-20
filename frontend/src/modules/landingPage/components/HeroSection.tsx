@@ -14,9 +14,11 @@ export default function BeautifulWelcomeSection() {
     >
       {/* Main content grows, footer stays low */}
       <div className="flex-1 mx-auto max-w-7xl px-6 py-10 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
+        {/* CHANGED: items-start (not items-center) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-8 md:gap-12">
           {/* VIDEO: bottom on mobile, left on desktop — NEVER CROPPED */}
-          <div className="order-2 md:order-1 mb-8 md:mb-0">
+          {/* CHANGED: add md:mt-[168px] to drop the video top down to the "LAUNCHING..." line */}
+          <div className="order-2 md:order-1 mb-8 md:mb-0 md:mt-[168px]">
             <div className="w-full rounded-xl overflow-hidden bg-transparent">
               <video
                 className="block w-full h-auto md:max-h-[520px] object-contain bg-transparent"
@@ -35,7 +37,7 @@ export default function BeautifulWelcomeSection() {
 
           {/* CONTENT: top on mobile, right on desktop */}
           <div className="order-1 md:order-2 text-center md:text-left mx-auto md:mx-0">
-            {/* Logo (now with thin gold border) */}
+            {/* Logo (thin gold border) */}
             <div className="flex justify-center md:justify-start mb-6">
               <img
                 src={brandLogo}
@@ -84,7 +86,7 @@ export default function BeautifulWelcomeSection() {
                              [background-color:#FFFCF3] [color:#4B2C1A] font-semibold
                              hover:[background-color:#e9e2d1] transition-colors"
                 >
-                  Get me in
+                  Get me in now
                 </button>
               </div>
             </div>
