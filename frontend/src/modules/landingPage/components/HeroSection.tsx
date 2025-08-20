@@ -17,8 +17,8 @@ export default function BeautifulWelcomeSection() {
         backgroundPosition: "center",
       }}
     >
-      {/* Main content grows, footer stays low */}
-      <div className="flex-1 mx-auto max-w-7xl px-6 pt-10 md:pt-16 pb-3">
+      {/* Main content — reduced top/bottom padding to move everything up */}
+      <div className="flex-1 mx-auto max-w-7xl px-6 pt-4 md:pt-6 pb-1">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
           {/* VIDEO: bottom on mobile, left on desktop — NEVER CROPPED */}
           <div className="order-2 md:order-1 mb-8 md:mb-0">
@@ -117,12 +117,10 @@ export default function BeautifulWelcomeSection() {
             </div>
           </div>
         </div>
-
-        {/* (removed the old centered IG block) */}
       </div>
 
-      {/* Footer pinned near the bottom by the flex layout, kept in view */}
-      <footer className="pb-4 text-center text-xs text-[#4B2C1A]">
+      {/* Footer kept in view by reduced spacing above + small bottom padding */}
+      <footer className="pb-2 text-center text-xs text-[#4B2C1A]">
         ©{new Date().getFullYear()} Protean LDN. All rights reserved.
       </footer>
     </section>
