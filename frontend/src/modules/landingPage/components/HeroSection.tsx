@@ -17,14 +17,18 @@ export default function BeautifulWelcomeSection() {
         backgroundPosition: "center",
       }}
     >
-      {/* Main content — reduced top/bottom padding to move everything up */}
+      {/* Main content */}
       <div className="flex-1 mx-auto max-w-7xl px-6 pt-4 md:pt-6 pb-1">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
+        {/* Top-align on md+ so tall screens don't create a big middle gap */}
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center md:items-start gap-8 md:gap-12">
           {/* VIDEO: bottom on mobile, left on desktop — NEVER CROPPED */}
           <div className="order-2 md:order-1 mb-8 md:mb-0">
             <div className="w-full rounded-xl overflow-hidden bg-transparent">
               <video
-                className="block w-full h-auto md:max-h-[780px] object-contain bg-transparent"
+                className="
+                  block w-full h-auto object-contain bg-transparent
+                  md:max-h-[520px] lg:max-h-[680px] xl:max-h-[780px]
+                "
                 style={{ backgroundColor: "transparent" }}
                 src={videoSrc}
                 poster={heroPoster}
@@ -76,23 +80,23 @@ export default function BeautifulWelcomeSection() {
               </a>
             </div>
 
-            {/* BIG HEADLINE */}
+            {/* BIG HEADLINE — ~20% smaller on md only */}
             <div className="display-font leading-[0.9] mb-6">
-              <h1 className="text-[#4B2C1A] font-black text-6xl md:text-8xl">
+              <h1 className="text-[#4B2C1A] font-black text-6xl md:text-7xl xl:text-8xl">
                 PROTEIN
               </h1>
-              <h2 className="text-[#2F7A43] font-black text-6xl md:text-8xl">
+              <h2 className="text-[#2F7A43] font-black text-6xl md:text-7xl xl:text-8xl">
                 BUBBLE TEA
               </h2>
             </div>
 
             {/* Copy block */}
             <div className="max-w-2xl mx-auto md:mx-0 text-[#4B2C1A]">
-              <p className="text-lg md:text-xl mb-3">
+              <p className="text-lg md:text-[17px] xl:text-xl mb-3">
                 Your new favourite protein shake is about to taste like bubble tea.
                 Real tea, real benefits.
               </p>
-              <p className="italic text-lg md:text-xl mb-8">
+              <p className="italic text-lg md:text-[17px] xl:text-xl mb-8">
                 Sign up to our waitlist now for priority access and secret discount codes.
               </p>
 
@@ -111,7 +115,7 @@ export default function BeautifulWelcomeSection() {
                              [background-color:#FFFCF3] [color:#4B2C1A] font-semibold
                              hover:[background-color:#e9e2d1] transition-colors"
                 >
-                  Get me in now
+                  Get me in
                 </button>
               </div>
             </div>
@@ -119,7 +123,7 @@ export default function BeautifulWelcomeSection() {
         </div>
       </div>
 
-      {/* Footer kept in view by reduced spacing above + small bottom padding */}
+      {/* Footer kept in view by smaller content + flex layout */}
       <footer className="pb-2 text-center text-xs text-[#4B2C1A]">
         ©{new Date().getFullYear()} Protean LDN. All rights reserved.
       </footer>
