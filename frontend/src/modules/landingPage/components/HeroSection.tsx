@@ -13,13 +13,14 @@ export default function BeautifulWelcomeSection() {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Main content grows, footer stays low */}
-      <div className="flex-1 mx-auto max-w-7xl px-6 py-10 md:py-16">
+      {/* ↓ Tighten bottom padding from py-10 md:py-16 to pt-10 md:pt-16 pb-6 */}
+      <div className="flex-1 mx-auto max-w-7xl px-6 pt-10 md:pt-16 pb-6">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
           {/* VIDEO: bottom on mobile, left on desktop — NEVER CROPPED */}
           <div className="order-2 md:order-1 mb-8 md:mb-0">
             <div className="w-full rounded-xl overflow-hidden bg-transparent">
               <video
-                className="block w-full h-auto md:max-h-[820px] object-contain bg-transparent"
+                className="block w-full h-auto md:max-h-[975px] object-contain bg-transparent"
                 style={{ backgroundColor: "transparent" }}
                 src={videoSrc}
                 poster={heroPoster}
@@ -92,7 +93,8 @@ export default function BeautifulWelcomeSection() {
         </div>
 
         {/* Social: centred Instagram icon */}
-        <div className="mt-16 md:mt-20 flex justify-center">
+        {/* ↓ Tighten the gap above the icon from mt-16 md:mt-20 to mt-8 md:mt-10 */}
+        <div className="mt-8 md:mt-10 flex justify-center">
           <a
             href="https://www.instagram.com/proteanldn/"
             target="_blank"
@@ -117,7 +119,8 @@ export default function BeautifulWelcomeSection() {
       </div>
 
       {/* Footer pinned near the bottom by the flex layout */}
-      <footer className="pb-8 text-center text-xs text-[#4B2C1A]">
+      {/* ↓ Tighten bottom spacing from pb-8 to pb-4 */}
+      <footer className="pb-4 text-center text-xs text-[#4B2C1A]">
         ©{new Date().getFullYear()} Protean LDN. All rights reserved.
       </footer>
     </section>
