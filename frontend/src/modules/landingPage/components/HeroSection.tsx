@@ -22,7 +22,8 @@ export default function BeautifulWelcomeSection() {
         {/* Top-align on md+ so tall screens don't create a big middle gap */}
         <div className="grid grid-cols-1 md:grid-cols-2 items-center md:items-start gap-8 md:gap-12">
           {/* VIDEO: bottom on mobile, left on desktop — NEVER CROPPED */}
-          <div className="order-2 md:order-1 mb-8 md:mb-0">
+          {/* ALIGNMENT: push video down by logo height (h-36 = 9rem) */}
+          <div className="order-2 md:order-1 mb-8 md:mb-0 md:mt-36">
             <div className="w-full rounded-xl overflow-hidden bg-transparent">
               <video
                 className="
@@ -80,7 +81,7 @@ export default function BeautifulWelcomeSection() {
               </a>
             </div>
 
-            {/* BIG HEADLINE — ~20% smaller on md only */}
+            {/* BIG HEADLINE */}
             <div className="display-font leading-[0.9] mb-6">
               <h1 className="text-[#4B2C1A] font-black text-6xl md:text-7xl xl:text-8xl">
                 PROTEIN
@@ -123,7 +124,7 @@ export default function BeautifulWelcomeSection() {
         </div>
       </div>
 
-      {/* Footer kept in view by smaller content + flex layout */}
+      {/* Footer */}
       <footer className="pb-2 text-center text-xs text-[#4B2C1A]">
         ©{new Date().getFullYear()} Protean LDN. All rights reserved.
       </footer>
