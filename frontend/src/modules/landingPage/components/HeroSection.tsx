@@ -3,12 +3,13 @@ import brandLogo from "../../../assets/BrandLogoBrown.png";
 import heroPoster from "../../../assets/hero-poster.jpg";
 import bgImage from "../../../assets/bg.jpg";
 
-// Video file is served from /public
+// Video file is served from /public (place at frontend/public/videos/hero.mp4)
 const videoSrc = "/videos/hero.mp4";
 
 export default function BeautifulWelcomeSection() {
   return (
     <section
+      // KEY FIXES: w-screen, min-h-dvh, bg-no-repeat, overflow-x-hidden
       className="w-screen min-h-dvh overflow-x-hidden font-sans bg-center bg-cover bg-no-repeat flex flex-col"
       style={{
         backgroundImage: `url(${bgImage})`,
@@ -18,16 +19,13 @@ export default function BeautifulWelcomeSection() {
       }}
     >
       {/* Main content grows, footer stays low */}
-      <div className="flex-1 mx-auto max-w-7xl px-6 pt-8 md:pt-12 pb-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-10">
-          {/* VIDEO: bottom on mobile, left on desktop — never cropped */}
-          <div className="order-2 md:order-1 mb-6 md:mb-0">
+      <div className="flex-1 mx-auto max-w-7xl px-6 pt-10 md:pt-16 pb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
+          {/* VIDEO: bottom on mobile, left on desktop — NEVER CROPPED */}
+          <div className="order-2 md:order-1 mb-8 md:mb-0">
             <div className="w-full rounded-xl overflow-hidden bg-transparent">
               <video
-                className="
-                  block w-full h-auto object-contain bg-transparent
-                  md:max-h-[560px] lg:max-h-[520px]
-                "
+                className="block w-full h-auto md:max-h-[780px] object-contain bg-transparent"
                 style={{ backgroundColor: "transparent" }}
                 src={videoSrc}
                 poster={heroPoster}
@@ -43,56 +41,52 @@ export default function BeautifulWelcomeSection() {
 
           {/* CONTENT: top on mobile, right on desktop */}
           <div className="order-1 md:order-2 text-center md:text-left mx-auto md:mx-0">
-            {/* Logo with thin gold border */}
-            <div className="flex justify-center md:justify-start mb-4">
+            {/* Logo (thin gold circle border) */}
+            <div className="flex justify-center md:justify-start mb-6">
               <img
                 src={brandLogo}
                 alt="Protean LDN logo"
-                className="h-28 w-28 md:h-32 md:w-32 rounded-full object-cover border-[1.5px] [border-color:#D4AF37]"
+                className="h-36 w-36 rounded-full object-cover border-[1.5px] [border-color:#D4AF37]"
               />
             </div>
 
             {/* Launch line */}
-            <span className="block text-xs md:text-sm tracking-wider mb-3 text-[#4B2C1A]">
+            <span className="block text-sm tracking-wider mb-5 text-[#4B2C1A]">
               LAUNCHING JANUARY 2026
             </span>
 
-            {/* Headline — slightly smaller to fit above the fold */}
-            <div className="leading-[0.9] mb-4">
-              <h1 className="text-[#4B2C1A] font-black
-                             text-[clamp(2.25rem,5vw,4rem)]
-                             md:text-[clamp(3rem,4.5vw,4.5rem)]">
+            {/* BIG HEADLINE */}
+            <div className="display-font leading-[0.9] mb-6">
+              <h1 className="text-[#4B2C1A] font-black text-6xl md:text-8xl">
                 PROTEIN
               </h1>
-              <h2 className="text-[#2F7A43] font-black
-                             text-[clamp(2.25rem,5vw,4rem)]
-                             md:text-[clamp(3rem,4.5vw,4.5rem)]">
+              <h2 className="text-[#2F7A43] font-black text-6xl md:text-8xl">
                 BUBBLE TEA
               </h2>
             </div>
 
-            {/* Copy block — slightly tighter */}
+            {/* Copy block */}
             <div className="max-w-2xl mx-auto md:mx-0 text-[#4B2C1A]">
-              <p className="text-base md:text-lg mb-2">
+              <p className="text-lg md:text-xl mb-3">
                 Your new favourite protein shake is about to taste like bubble tea.
                 Real tea, real benefits.
               </p>
-              <p className="italic text-base md:text-lg mb-6">
+              <p className="italic text-lg md:text-xl mb-8">
                 Sign up to our waitlist now for priority access and secret discount codes.
               </p>
 
               {/* Email form */}
-              <div className="flex flex-col sm:flex-row items-center md:items-stretch justify-center md:justify-start gap-3">
+              <div className="flex flex-col sm:flex-row items-center md:items-stretch justify-center md:justify-start gap-4">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 w-full px-6 py-3 rounded-full border border-transparent
+                  className="flex-1 w-full px-6 py-4 rounded-full border border-transparent
                              focus:outline-none focus:ring-2 focus:ring-gray-300
                              [background-color:#013220] [color:#FFFCF3] [placeholder-color:#FFFCF3]"
                 />
                 <button
                   type="button"
-                  className="px-6 py-3 rounded-full border-2 [border-color:#4B2C1A]
+                  className="px-6 py-4 rounded-full border-2 [border-color:#4B2C1A]
                              [background-color:#FFFCF3] [color:#4B2C1A] font-semibold
                              hover:[background-color:#e9e2d1] transition-colors"
                 >
@@ -103,18 +97,18 @@ export default function BeautifulWelcomeSection() {
           </div>
         </div>
 
-        {/* Social: centred Instagram icon (tighter spacing) */}
-        <div className="mt-6 md:mt-7 flex justify-center">
+        {/* Social: centred Instagram icon */}
+        <div className="mt-8 md:mt-10 flex justify-center">
           <a
             href="https://www.instagram.com/proteanldn/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Protean LDN on Instagram"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/70 hover:bg-white transition shadow-sm"
+            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/70 hover:bg-white transition shadow-sm"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5"
+              className="w-6 h-6"
               viewBox="0 0 24 24"
               fill="none"
               stroke="#4B2C1A"
@@ -128,8 +122,8 @@ export default function BeautifulWelcomeSection() {
         </div>
       </div>
 
-      {/* Footer pinned near the bottom */}
-      <footer className="pb-3 text-center text-[11px] md:text-xs text-[#4B2C1A]">
+      {/* Footer pinned near the bottom by the flex layout */}
+      <footer className="pb-4 text-center text-xs text-[#4B2C1A]">
         ©{new Date().getFullYear()} Protean LDN. All rights reserved.
       </footer>
     </section>
