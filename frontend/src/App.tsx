@@ -79,9 +79,10 @@ function PageShell({ children }: { children: React.ReactNode }) {
         <img
           src={brandLogo}
           alt="Protean LDN logo"
-          className="h-12 w-12 md:h-14 md:w-14 rounded-full object-cover border-[1.5px]"
+          className="h-14 w-14 md:h-20 md:w-20 rounded-full object-cover border-[1.5px]"
           style={{ borderColor: "#D4AF37" }}
         />
+
       </a>
 
       {/* Keep the same top padding (no vertical re-centering), center horizontally */}
