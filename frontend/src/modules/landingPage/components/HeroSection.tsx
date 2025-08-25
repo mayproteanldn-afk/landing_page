@@ -3,7 +3,7 @@ import brandLogo from "../../../assets/BrandLogoBrown.png";
 import heroPoster from "../../../assets/hero-poster.jpg";
 import bgImage from "../../../assets/bg.jpg";
 
-// Video file is served from /public (place at frontend/public/videos/hero.mp4)
+// Video file served from /public
 const videoSrc = "/videos/hero.mp4";
 
 export default function BeautifulWelcomeSection() {
@@ -19,17 +19,13 @@ export default function BeautifulWelcomeSection() {
     >
       {/* Main content */}
       <div className="flex-1 mx-auto max-w-7xl px-6 pt-4 md:pt-6 pb-1">
-        {/* Top-align on md+ so tall screens don't create a big middle gap */}
+        {/* Desktop: two columns. Mobile: stack. */}
         <div className="grid grid-cols-1 md:grid-cols-2 items-center md:items-start gap-8 md:gap-12">
-          {/* VIDEO: bottom on mobile, left on desktop — NEVER CROPPED */}
-          {/* ALIGNMENT: push video down by logo height (h-36 = 9rem) */}
-          <div className="order-2 md:order-1 mb-8 md:mb-0 md:mt-36">
+          {/* VIDEO: bottom on mobile, left on desktop — never cropped */}
+          <div className="order-2 md:order-1 mb-8 md:mb-0">
             <div className="w-full rounded-xl overflow-hidden bg-transparent">
               <video
-                className="
-                  block w-full h-auto object-contain bg-transparent
-                  md:max-h-[520px] lg:max-h-[680px] xl:max-h-[780px]
-                "
+                className="block w-full h-auto object-contain bg-transparent md:max-h-[680px] xl:max-h-[780px]"
                 style={{ backgroundColor: "transparent" }}
                 src={videoSrc}
                 poster={heroPoster}
@@ -81,27 +77,29 @@ export default function BeautifulWelcomeSection() {
               </a>
             </div>
 
-            {/* BIG HEADLINE */}
-            <div className="display-font leading-[0.9] mb-6">
+            {/* BIG HEADLINE — keep clean code font/colors; force 'Bubble Tea' onto one line on desktop */}
+            <div className="leading-[0.9] mb-6">
+              {/* Keep your clean-code color/sizing for 'PROTEIN' */}
               <h1 className="text-[#4B2C1A] font-black text-6xl md:text-7xl xl:text-8xl">
                 PROTEIN
               </h1>
-              <h2 className="text-[#2F7A43] font-black text-6xl md:text-7xl xl:text-8xl">
+              {/* Keep your clean-code color for 'Bubble Tea' and prevent wrap on md+ */}
+              <h2 className="text-[#2F7A43] font-black text-6xl md:text-7xl xl:text-8xl md:whitespace-nowrap">
                 BUBBLE TEA
               </h2>
             </div>
 
             {/* Copy block */}
             <div className="max-w-2xl mx-auto md:mx-0 text-[#4B2C1A]">
-              <p className="text-lg md:text-[17px] xl:text-xl mb-3">
+              <p className="text-lg md:text-xl mb-3">
                 Your new favourite protein shake is about to taste like bubble tea.
                 Real tea, real benefits.
               </p>
-              <p className="italic text-lg md:text-[17px] xl:text-xl mb-8">
+              <p className="italic text-lg md:text-xl mb-8">
                 Sign up to our waitlist now for priority access and secret discount codes.
               </p>
 
-              {/* Email form */}
+              {/* Email form (from tester) */}
               <div className="flex flex-col sm:flex-row items-center md:items-stretch justify-center md:justify-start gap-4">
                 <input
                   type="email"
@@ -124,7 +122,7 @@ export default function BeautifulWelcomeSection() {
         </div>
       </div>
 
-      {/* Footer */}
+      {/* Footer (compact so it stays in view) */}
       <footer className="pb-2 text-center text-xs text-[#4B2C1A]">
         ©{new Date().getFullYear()} Protean LDN. All rights reserved.
       </footer>
