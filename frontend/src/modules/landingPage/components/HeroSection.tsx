@@ -10,7 +10,7 @@ export default function BeautifulWelcomeSection() {
   return (
     <>
       {/* Fixed logo — top-left (now 50% bigger) */}
-            <header className="fixed top-4 left-4 md:top-6 md:left-6 z-50">
+      <header className="fixed top-4 left-4 md:top-6 md:left-6 z-50">
         <img
           src={brandLogo}
           alt="Protean LDN"
@@ -29,7 +29,6 @@ export default function BeautifulWelcomeSection() {
       >
         <div className="flex-1 mx-auto max-w-7xl px-6 pt-6 md:pt-8 pb-1">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center md:items-start gap-8 md:gap-12">
-
             {/* VIDEO: moved down the same amount as the text column */}
             <div className="order-2 md:order-1 mb-8 md:mb-0 mt-6 md:mt-10">
               <div className="w-full rounded-xl overflow-hidden bg-transparent">
@@ -103,13 +102,23 @@ export default function BeautifulWelcomeSection() {
                   Sign up to our waitlist now for priority access and secret discount codes.
                 </p>
 
-                {/* Email form */}
+                {/* Signup form: first name + email */}
                 <div className="flex flex-col sm:flex-row items-center md:items-stretch justify-center md:justify-start gap-4">
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder="Enter your first name"
+                    aria-label="First name"
+                    autoComplete="given-name"
+                    className="flex-1 w-full px-6 py-4 rounded-full border border-transparent
+                               focus:outline-none focus:ring-2 focus:ring-brown-300
+                               [background-color:#FFFCF3] [color:#4B2C1A] [placeholder-color:#FFFCF3]"
+                  />
                   <input
                     type="email"
                     placeholder="Enter your email"
                     className="flex-1 w-full px-6 py-4 rounded-full border border-transparent
-                               focus:outline-none focus:ring-2 focus:ring-gray-300
+                               focus:outline-none focus:ring-2 focus:ring-brown-300
                                [background-color:#013220] [color:#FFFCF3] [placeholder-color:#FFFCF3]"
                   />
                   <button
@@ -123,7 +132,6 @@ export default function BeautifulWelcomeSection() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
 
