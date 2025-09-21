@@ -188,7 +188,7 @@ function About() {
 
         {/* What we make */}
         <section className="mt-12 md:mt-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+          <h2 className="display-font text-3xl md:text-4xl font-extrabold mb-4">
             What we make
           </h2>
 
@@ -227,7 +227,7 @@ function About() {
 
         {/* Flavours */}
         <section className="mt-10 md:mt-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-6">
+          <h2 className="display-font text-3xl md:text-4xl font-extrabold mb-6">
             Launch flavours (teaser)
           </h2>
 
@@ -266,7 +266,7 @@ function About() {
 
         {/* Timeline */}
         <section className="mt-10 md:mt-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-6">
+          <h2 className="display-font text-3xl md:text-4xl font-extrabold mb-6">
             Where we’re at
           </h2>
 
@@ -381,7 +381,7 @@ function SecretAccess() {
                   filter: "blur(18px) saturate(120%)",
                 }}
               >
-                <h2 className="text-4xl md:text-5xl font-extrabold text-[#2F7A43] opacity-80">
+                <h2 className="display-font text-4xl md:text-5xl font-extrabold text-[#2F7A43] opacity-80">
                   Welcome to the land of gains and flavour
                 </h2>
                 <p className="mt-4 text-[#4B2C1A] text-lg opacity-80">
@@ -396,6 +396,7 @@ function SecretAccess() {
             <h1 className="display-font text-4xl md:text-5xl font-extrabold mb-4 text-center">
               Secret Access
             </h1>
+
             <p className="text-center opacity-80 mb-6">
               Enter the password to unlock exclusive content.
             </p>
