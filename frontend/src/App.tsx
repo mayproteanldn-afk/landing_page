@@ -393,7 +393,7 @@ function SecretAccess() {
 
           {/* unlock card */}
           <div className="mx-auto max-w-md text-left text-[#4B2C1A] mt-24 md:mt-28">
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-center">
+            <h1 className="display-font text-4xl md:text-5xl font-extrabold mb-4 text-center">
               Secret Access
             </h1>
             <p className="text-center opacity-80 mb-6">
