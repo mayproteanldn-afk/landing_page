@@ -44,6 +44,13 @@ function Navbar() {
           </NavLink>
         </li>
 
+        <li>
+          <NavLink to="/secret" className={linkClass}>
+            Secret Access
+          </NavLink>
+        </li>
+
+
         {SHOW_PREORDER && (
           <li>
             <NavLink to="/pre-order" className={linkClass}>
@@ -153,7 +160,7 @@ function About() {
                 <span className="block mt-2">
                   <strong>
                     Whilst the supplement aisle was full of
-                    vanilla-ice-cream and Nutella flavours, nothing tasted like
+                    vanilla ice cream and nutella flavours, nothing tasted like
                     home.
                   </strong>{" "}
                   Nothing <em>scratched the itch</em> for the flavours she grew
@@ -317,6 +324,216 @@ function PreOrder() {
   );
 }
 
+/* -------------------- Secret Access page -------------------- */
+function SecretAccess() {
+  const [step, setStep] = React.useState<"locked" | "form" | "done">(
+    () => (localStorage.getItem("secretUnlocked") === "1" ? "form" : "locked")
+  );
+
+  const [pw, setPw] = React.useState("");
+  const [pwError, setPwError] = React.useState("");
+
+  const SECRET =
+    (import.meta as any).env?.VITE_SECRET_ACCESS_PW || "boba-strong";
+
+  function handleUnlock(e: React.FormEvent) {
+    e.preventDefault();
+    if (pw.trim() === SECRET) {
+      localStorage.setItem("secretUnlocked", "1");
+      setPwError("");
+      setStep("form");
+    } else {
+      setPwError("Wrong password. Try again.");
+    }
+  }
+
+  const [firstName, setFirstName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [formError, setFormError] = React.useState("");
+
+  function handleFormSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!firstName.trim()) return setFormError("Please enter your first name.");
+    const emailOk = /^\S+@\S+\.\S+$/.test(email);
+    if (!emailOk) return setFormError("Please enter a valid email address.");
+    setFormError("");
+    // TODO: integrate with your waitlist/ESP
+    setStep("done");
+  }
+
+  return (
+    <PageShell>
+      {/* LOCKED */}
+      {step === "locked" && (
+        <div className="relative">
+          {/* blurred preview background */}
+          <div
+            className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none select-none"
+            aria-hidden="true"
+          >
+            <div className="w-full max-w-4xl mx-auto px-4">
+              <div
+                className="rounded-3xl border border-white/40 bg-white/30 shadow-2xl p-10 md:p-14"
+                style={{
+                  backgroundImage: `url(${bgImage})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  filter: "blur(18px) saturate(120%)",
+                }}
+              >
+                <h2 className="text-4xl md:text-5xl font-extrabold text-[#2F7A43] opacity-80">
+                  Welcome to the land of gains and flavour
+                </h2>
+                <p className="mt-4 text-[#4B2C1A] text-lg opacity-80">
+                  (Preview hidden until you enter the password)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* unlock card */}
+          <div className="mx-auto max-w-md text-left text-[#4B2C1A] mt-24 md:mt-28">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-center">
+              Secret Access
+            </h1>
+            <p className="text-center opacity-80 mb-6">
+              Enter the password to unlock exclusive content.
+            </p>
+
+            <form
+              onSubmit={handleUnlock}
+              className="rounded-2xl bg-white/85 backdrop-blur-md border border-[#D2D2D2] p-6 shadow-lg"
+            >
+              <label className="block text-sm mb-2" htmlFor="secretPw">
+                Password
+              </label>
+              <input
+                id="secretPw"
+                type="password"
+                inputMode="text"
+                autoComplete="current-password"
+                value={pw}
+                onChange={(e) => setPw(e.target.value)}
+                className="w-full px-4 py-3 rounded-xl border border-[#D2D2D2] focus:outline-none focus:ring-2 focus:ring-[#5e8c31]"
+                placeholder="••••••••"
+                aria-invalid={!!pwError}
+                aria-describedby={pwError ? "pw-error" : undefined}
+              />
+              {pwError && (
+                <p id="pw-error" className="mt-2 text-sm text-red-700">
+                  {pwError}
+                </p>
+              )}
+
+              {/* GOLD unlock button (no pro-tip) */}
+              <button
+                type="submit"
+                className="mt-4 w-full rounded-xl px-4 py-3 font-semibold text-[#8C6E1E] shadow-sm border border-[#C9A227] hover:bg-[#C9A227] transition-colors"
+                style={{ background: "#D4AF37" }}
+              >
+                Unlock
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* FORM */}
+      {step === "form" && (
+        <div className="mx-auto max-w-2xl text-[#4B2C1A] mt-16 md:mt-20">
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
+            Welcome to the land of gains and flavour
+          </h1>
+          <p className="mt-4 text-lg opacity-90">
+            Pop in your details to confirm access.
+          </p>
+
+          <form
+            onSubmit={handleFormSubmit}
+            className="mt-6 rounded-2xl bg-white/90 backdrop-blur border border-[#D2D2D2] p-6 md:p-7 shadow-lg text-left"
+          >
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm mb-2" htmlFor="firstName">
+                  First name
+                </label>
+                <input
+                  id="firstName"
+                  name="firstName"
+                  type="text"
+                  autoComplete="given-name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  className="w-full px-4 py-3 rounded-xl border border-[#D2D2D2] focus:outline-none focus:ring-2 focus:ring-[#5e8c31]"
+                  placeholder="Your first name"
+                />
+              </div>
+              <div>
+                <label className="block text-sm mb-2" htmlFor="email">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-3 rounded-xl border border-[#D2D2D2] focus:outline-none focus:ring-2 focus:ring-[#5e8c31]"
+                  placeholder="you@example.com"
+                />
+              </div>
+            </div>
+
+            {formError && (
+              <p className="mt-3 text-sm text-red-700">{formError}</p>
+            )}
+
+            <div className="mt-5 flex gap-3">
+              <button
+                type="submit"
+                className="rounded-xl px-5 py-3 font-semibold text-white"
+                style={{ background: "#5e8c31" }}
+              >
+                Confirm access
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  localStorage.removeItem("secretUnlocked");
+                  setStep("locked");
+                }}
+                className="rounded-xl px-5 py-3 font-semibold border border-[#4B2C1A] text-[#4B2C1A] bg-white/80"
+              >
+                Lock again
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
+
+      {/* SUCCESS */}
+      {step === "done" && (
+        <div className="mx-auto max-w-xl text-[#4B2C1A] mt-28 md:mt-32 text-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+            You’re in 🎉
+          </h1>
+          <p className="text-lg">
+            You're in, keep an eye out on your inbox for a surprise ;)
+          </p>
+          <button
+            className="mt-8 rounded-xl px-6 py-3 font-semibold text-white"
+            style={{ background: "#5e8c31" }}
+            onClick={() => setStep("form")}
+          >
+            Back
+          </button>
+        </div>
+      )}
+    </PageShell>
+  );
+}
+
 /* -------------------- Routes -------------------- */
 export default function App() {
   return (
@@ -335,6 +552,8 @@ export default function App() {
 
         {/* About (visible) */}
         <Route path="/about" element={<About />} />
+
+        <Route path="/secret" element={<SecretAccess />} />
 
         {/* Pre-Order: hidden -> redirect to Home */}
         {SHOW_PREORDER ? (
