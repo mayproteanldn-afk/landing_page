@@ -1,11 +1,8 @@
-/* Headline font */
 @import url("https://fonts.googleapis.com/css2?family=Gloock&display=swap");
-
-/* Tailwind */
 @import "tailwindcss";
 
-/* Use on your headline wrapper */
+/* Force headings to use the display font */
 .display-font {
-  font-family: "Gloock", serif;
+  font-family: "Gloock", serif !important;
   letter-spacing: -0.01em;
 }
