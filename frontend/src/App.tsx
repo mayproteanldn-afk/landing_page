@@ -107,7 +107,7 @@ function FAQs() {
   return (
     <PageShell>
       <div className="max-w-3xl mx-auto text-[#4B2C1A]">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-6">FAQs</h1>
+        <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-6">FAQs</h1>
         <p className="text-lg md:text-xl opacity-80">
           Add your common questions and answers here.
         </p>
@@ -135,7 +135,7 @@ function About() {
           {/* Left: copy */}
           <div className="lg:col-span-7">
             <p className="text-sm opacity-70 mb-3">About Protean LDN</p>
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+            <h1 className="display-font !font-normal text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
               Our why
             </h1>
 
@@ -188,7 +188,7 @@ function About() {
 
         {/* What we make */}
         <section className="mt-12 md:mt-16">
-          <h2 className="display-font text-3xl md:text-4xl font-extrabold mb-4">
+          <h2 className="display-font !font-normal text-3xl md:text-4xl font-extrabold mb-4">
             What we make
           </h2>
 
@@ -227,7 +227,7 @@ function About() {
 
         {/* Flavours */}
         <section className="mt-10 md:mt-12">
-          <h2 className="display-font text-3xl md:text-4xl font-extrabold mb-6">
+          <h2 className="display-font !font-normal text-3xl md:text-4xl font-extrabold mb-6">
             Launch flavours (teaser)
           </h2>
 
@@ -266,7 +266,7 @@ function About() {
 
         {/* Timeline */}
         <section className="mt-10 md:mt-12">
-          <h2 className="display-font text-3xl md:text-4xl font-extrabold mb-6">
+          <h2 className="display-font !font-normal text-3xl md:text-4xl font-extrabold mb-6">
             Where we’re at
           </h2>
 
@@ -315,7 +315,7 @@ function PreOrder() {
   return (
     <PageShell>
       <div className="max-w-3xl mx-auto text-[#4B2C1A]">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Pre-Order</h1>
+        <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-6">Pre-Order</h1>
         <p className="text-lg md:text-xl opacity-80">
           Put your pre-order form or “coming soon” content here.
         </p>
@@ -381,7 +381,7 @@ function SecretAccess() {
                   filter: "blur(18px) saturate(120%)",
                 }}
               >
-                <h2 className="display-font text-4xl md:text-5xl font-extrabold text-[#2F7A43] opacity-80">
+                <h2 className="display-font !font-normal text-4xl md:text-5xl font-extrabold text-[#2F7A43] opacity-80">
                   Welcome to the land of gains and flavour
                 </h2>
                 <p className="mt-4 text-[#4B2C1A] text-lg opacity-80">
@@ -393,7 +393,7 @@ function SecretAccess() {
 
           {/* unlock card */}
           <div className="mx-auto max-w-md text-left text-[#4B2C1A] mt-24 md:mt-28">
-            <h1 className="display-font text-4xl md:text-5xl font-extrabold mb-4 text-center">
+            <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-4 text-center">
               Secret Access
             </h1>
 
@@ -442,7 +442,7 @@ function SecretAccess() {
       {/* FORM */}
       {step === "form" && (
         <div className="mx-auto max-w-2xl text-[#4B2C1A] mt-16 md:mt-20">
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
+          <h1 className="display-font !font-normal text-5xl md:text-6xl font-extrabold leading-tight">
             Welcome to the land of gains and flavour
           </h1>
           <p className="mt-4 text-lg opacity-90">
@@ -516,7 +516,7 @@ function SecretAccess() {
       {/* SUCCESS */}
       {step === "done" && (
         <div className="mx-auto max-w-xl text-[#4B2C1A] mt-28 md:mt-32 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+          <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-4">
             You’re in 🎉
           </h1>
           <p className="text-lg">
