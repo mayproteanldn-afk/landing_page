@@ -197,6 +197,7 @@ function About() {
         </div>
 
 
+
         {/* What we make */}
         <section className="mt-12 md:mt-16">
           <h2 className="display-font !font-normal text-3xl md:text-4xl font-extrabold mb-4">
