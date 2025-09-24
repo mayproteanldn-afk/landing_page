@@ -505,7 +505,7 @@ function SecretAccess() {
               <button
                 type="submit"
                 className="rounded-xl px-5 py-3 font-semibold text-white"
-                style={{ background: "#5e8c31" }}
+                style={{ background: "#e8b80eff" }}
               >
                 Confirm access
               </button>
