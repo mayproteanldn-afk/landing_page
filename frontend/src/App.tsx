@@ -501,7 +501,8 @@ function SecretAccess() {
               <p className="mt-3 text-sm text-red-700">{formError}</p>
             )}
 
-            <div className="mt-5 flex gap-3">
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+
               <button
                 type="submit"
                 className="rounded-xl px-5 py-3 font-semibold text-white"
