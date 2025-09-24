@@ -136,14 +136,18 @@ function About() {
       {/* outer wrapper overrides parent center alignment */}
       <div className="max-w-6xl mx-auto text-left text-[#4B2C1A]">
         {/* Our why (split) */}
-        <div className="grid lg:grid-cols-12 gap-10 items-start mt-10 md:mt-12">
-          {/* Left: copy */}
-          <div className="lg:col-span-7">
+        {/* NOTE: add explicit grid rows so we can align the image with the card */}
+        <div className="grid lg:grid-cols-12 lg:grid-rows-[auto_1fr] gap-10 mt-10 md:mt-12">
+          {/* Left: heading (row 1) */}
+          <div className="lg:col-span-7 lg:row-start-1">
             <p className="text-sm opacity-70 mb-3">About Protean LDN</p>
             <h1 className="display-font !font-normal text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
               Our why
             </h1>
+          </div>
 
+          {/* Left: white card + link (row 2) */}
+          <div className="lg:col-span-7 lg:row-start-2">
             <div className="rounded-2xl bg-white border border-[#D2D2D2] p-6 md:p-7 shadow-sm">
               <p className="text-lg md:text-xl">
                 We grew up loving bubble tea — and we lift. Refusing to choose
@@ -158,15 +162,11 @@ function About() {
                 else) can comment on your body and what’s on your plate in the
                 same breath — well-meaning, but it can sting. She was the
                 “chubby” kid. After moving to the UK, she{" "}
-                <strong>
-                  found her true love - the gym - and lifting heavy circles
-                </strong>
-                .
+                <strong>found her true love - the gym - and lifting heavy circles</strong>.
                 <span className="block mt-2">
                   <strong>
-                    Whilst the supplement aisle was full of
-                    vanilla ice cream and nutella flavours, nothing tasted like
-                    home.
+                    Whilst the supplement aisle was full of vanilla ice cream and
+                    nutella flavours, nothing tasted like home.
                   </strong>{" "}
                   Nothing <em>scratched the itch</em> for the flavours she grew
                   up with while still helping her hit her goals. So she{" "}
@@ -183,8 +183,8 @@ function About() {
             </a>
           </div>
 
-          {/* Right: visual */}
-          <div className="lg:col-span-5 mt-8 md:mt-10 lg:mt-[88px]">
+          {/* Right: visual (row 2 to align with white card top) */}
+          <div className="lg:col-span-5 lg:row-start-2 lg:self-start mt-8 md:mt-10 lg:mt-0">
             <div className="rounded-2xl overflow-hidden border border-[#D2D2D2] h-80 md:h-[26rem] bg-[#FCFAF7]">
               <img
                 src={aboutHero}
@@ -195,8 +195,6 @@ function About() {
             </div>
           </div>
         </div>
-
-
 
         {/* What we make */}
         <section className="mt-12 md:mt-16">
@@ -231,8 +229,7 @@ function About() {
               Nutella flavours, nothing tasted like home.”
             </blockquote>
             <p className="text-[#5A605E] mt-3">
-              So
-              she decided to build it herself.
+              So she decided to build it herself.
             </p>
           </div>
         </section>
@@ -244,19 +241,16 @@ function About() {
           </h2>
 
           <div className="grid md:grid-cols-3 gap-5">
-            {/* Tile 1 */}
             <div className="rounded-2xl bg-white border border-[#D2D2D2] p-6">
               <div className="w-14 h-14 rounded-full bg-[#F5F5F5] border border-[#D2D2D2] mb-4" />
               <p>Matcha latte using ceremonial matcha</p>
             </div>
 
-            {/* Tile 2 */}
             <div className="rounded-2xl bg-white border border-[#D2D2D2] p-6">
               <div className="w-14 h-14 rounded-full bg-[#F5F5F5] border border-[#D2D2D2] mb-4" />
               <p>Brown sugar milk tea</p>
             </div>
 
-            {/* Tile 3 */}
             <div className="rounded-2xl bg-white border border-[#D2D2D2] p-6">
               <div className="w-14 h-14 rounded-full bg-[#F5F5F5] border border-[#D2D2D2] mb-4" />
               <p>
@@ -285,11 +279,7 @@ function About() {
           <div className="relative">
             <div className="h-1 bg-[#D2D2D2] rounded-full" />
             <div className="flex justify-between -mt-3">
-              {[
-                "Formulation",
-                "Pre-order info to waitlist",
-                "Soft launch: Jan 2026",
-              ].map((step, i) => (
+              {["Formulation", "Pre-order info to waitlist", "Soft launch: Jan 2026"].map((step, i) => (
                 <div key={i} className="flex flex-col items-center">
                   <div className="w-4 h-4 rounded-full bg-[#5e8c31]" />
                   <span className="mt-3 text-sm">{step}</span>
@@ -322,6 +312,7 @@ function About() {
     </PageShell>
   );
 }
+
 
 function PreOrder() {
   return (
