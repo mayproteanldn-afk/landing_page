@@ -18,6 +18,7 @@ export default function About() {
                     <h1 className="display-font text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
                         Our why
                     </h1>
+
                     <div className="rounded-2xl bg-white shadow-[0_0_0_1px_var(--line)] p-6 md:p-7">
                         <p className="text-lg md:text-xl">
                             We grew up loving bubble tea — and we lift. Refusing to choose between

@@ -6,6 +6,8 @@ import BeautifulWelcomeSection from "./modules/landingPage/components/HeroSectio
 import bgImage from "./assets/bg.jpg";
 // your logo for the subpages (top-left)
 import brandLogo from "./assets/BrandLogoBrown.png";
+import aboutHero from "./assets/Aboutpagedrink.png";
+
 
 /* -------------------- feature flags -------------------- */
 /* Flip these to true later when you want the pages live */
@@ -181,10 +183,15 @@ function About() {
             </a>
           </div>
 
-          {/* Right: visual placeholder */}
+          {/* Right: visual */}
           <div className="lg:col-span-5">
-            <div className="rounded-2xl bg-[#FCFAF7] border border-[#D2D2D2] h-80 md:h-[26rem] flex items-center justify-center text-[#5A605E]">
-              Hero visual (unbranded shaker, matcha liquid, soft shadow)
+            <div className="rounded-2xl overflow-hidden border border-[#D2D2D2] h-80 md:h-[26rem] bg-[#FCFAF7]">
+              <img
+                src={aboutHero}
+                alt="Unbranded shaker with matcha liquid and soft shadow"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
