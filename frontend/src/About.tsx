@@ -1,4 +1,5 @@
 import React from "react";
+import aboutHero from "./assets/Aboutpagedrink.png"; // if this path 404s, try "../assets/Aboutpagedrink.png"
 
 function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
     return (
@@ -43,9 +44,15 @@ export default function About() {
                     </a>
                 </div>
 
-                <div className="lg:col-span-5">
-                    <div className="rounded-2xl bg-[#FCFAF7] shadow-[0_0_0_1px_var(--line)] h-80 md:h-[26rem] flex items-center justify-center text-muted">
-                        Hero visual (unbranded shaker, matcha liquid, soft shadow)
+                {/* Right: visual */}
+                <div className="lg:col-span-5 mt-8 md:mt-10 lg:mt-[136px]">
+                    <div className="rounded-2xl overflow-hidden bg-[#FCFAF7] shadow-[0_0_0_1px_var(--line)] h-80 md:h-[26rem]">
+                        <img
+                            src={aboutHero}
+                            alt="Unbranded shaker with matcha liquid and soft shadow"
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                        />
                     </div>
                 </div>
             </section>
