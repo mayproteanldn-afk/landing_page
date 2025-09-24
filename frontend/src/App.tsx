@@ -345,7 +345,7 @@ function SecretAccess() {
   }, []);
   // 👆 End new block
   const SECRET =
-    (import.meta as any).env?.VITE_SECRET_ACCESS_PW || "boba-strong";
+    (import.meta as any).env?.VITE_SECRET_ACCESS_PW || "ilyproteinboba";
 
   function handleUnlock(e: React.FormEvent) {
     e.preventDefault();
