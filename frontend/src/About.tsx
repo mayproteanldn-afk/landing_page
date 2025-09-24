@@ -13,7 +13,7 @@ export default function About() {
     return (
         <main className="bg-cream text-ink">
             {/* Our why (split) */}
-            <section className="max-w-6xl mx-auto px-6 lg:px-8 py-14 lg:py-20 grid lg:grid-cols-12 gap-10">
+            <section className="max-w-6xl mx-auto px-6 lg:px-8 py-14 lg:py-20 grid lg:grid-cols-12 gap-10 items-start">
                 <div className="lg:col-span-7">
                     <p className="text-sm text-muted mb-3">About Protean LDN</p>
                     <h1 className="display-font text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
@@ -45,7 +45,7 @@ export default function About() {
                 </div>
 
                 {/* Right: visual */}
-                <div className="lg:col-span-5 mt-8 md:mt-10 lg:mt-[136px]">
+                <div className="lg:col-span-5">
                     <div className="rounded-2xl overflow-hidden bg-[#FCFAF7] shadow-[0_0_0_1px_var(--line)] h-80 md:h-[26rem]">
                         <img
                             src={aboutHero}
@@ -55,6 +55,7 @@ export default function About() {
                         />
                     </div>
                 </div>
+
             </section>
 
             {/* What we make */}
