@@ -1,5 +1,5 @@
+import { Routes, Route, NavLink, Navigate, useNavigate, useLocation } from "react-router-dom";
 import React from "react";
-import { Routes, Route, NavLink, Navigate } from "react-router-dom";
 import BeautifulWelcomeSection from "./modules/landingPage/components/HeroSection";
 
 // same background as Home
@@ -11,6 +11,9 @@ import brandLogo from "./assets/BrandLogoBrown.png";
 /* Flip these to true later when you want the pages live */
 const SHOW_FAQS = false;
 const SHOW_PREORDER = false;
+/* -------------------- QR surprise password -------------------- */
+const QR_PASSWORD = "ilyproteinboba";
+
 
 /* -------------------- Top-right navbar -------------------- */
 function Navbar() {
@@ -332,7 +335,15 @@ function SecretAccess() {
 
   const [pw, setPw] = React.useState("");
   const [pwError, setPwError] = React.useState("");
+  // 👇 Add this block
+  const location = useLocation() as { state?: { prefillPw?: string } };
 
+  React.useEffect(() => {
+    const incoming = location?.state?.prefillPw;
+    if (incoming) setPw(incoming);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  // 👆 End new block
   const SECRET =
     (import.meta as any).env?.VITE_SECRET_ACCESS_PW || "boba-strong";
 
@@ -535,12 +546,100 @@ function SecretAccess() {
   );
 }
 
+/* -------------------- Hidden QR page: /surprise -------------------- */
+function Surprise() {
+  const navigate = useNavigate();
+
+  // Add noindex so this page isn't indexed by search engines
+  React.useEffect(() => {
+    const meta = document.createElement("meta");
+    meta.name = "robots";
+    meta.content = "noindex, nofollow";
+    document.head.appendChild(meta);
+    return () => {
+      document.head.removeChild(meta);
+    };
+  }, []);
+
+  const [copied, setCopied] = React.useState(false);
+
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(QR_PASSWORD);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1600);
+    } catch {
+      // Fallback if clipboard API isn't available
+      const ta = document.createElement("textarea");
+      ta.value = QR_PASSWORD;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); setCopied(true); } catch { }
+      document.body.removeChild(ta);
+      setTimeout(() => setCopied(false), 1600);
+    }
+  }
+
+  function goToSecret() {
+    // pass the password along so SecretAccess can prefill
+    navigate("/secret", { state: { prefillPw: QR_PASSWORD } });
+  }
+
+  return (
+    <PageShell>
+      {/* overlay modal */}
+      <div className="fixed inset-0 z-50 bg-black/30 flex items-center justify-center p-4">
+        <div className="w-full max-w-md rounded-2xl bg-white/95 backdrop-blur border border-[#D2D2D2] shadow-xl p-6 text-[#4B2C1A]">
+          <h1 className="display-font !font-normal text-3xl md:text-4xl font-extrabold text-center">
+            You’re one of the lucky ones 🎉
+          </h1>
+
+          <p className="mt-3 text-center opacity-90">
+            Use this secret password on our access page to unlock an exclusive discount when we launch.
+          </p>
+
+          {/* password + copy */}
+          <div className="mt-5 flex gap-3 items-stretch">
+            <div className="flex-1 rounded-xl border border-[#D2D2D2] bg-[#FFFCF3] px-4 py-3 text-center break-all select-all">
+              {QR_PASSWORD}
+            </div>
+            <button
+              type="button"
+              onClick={handleCopy}
+              className="rounded-xl px-4 py-3 font-semibold text-[#8C6E1E] border border-[#C9A227] hover:bg-[#C9A227] transition-colors"
+              style={{ background: "#D4AF37" }}
+              aria-live="polite"
+            >
+              {copied ? "Copied!" : "Copy"}
+            </button>
+          </div>
+
+          <button
+            type="button"
+            onClick={goToSecret}
+            className="mt-4 w-full rounded-xl px-4 py-3 font-semibold border border-[#4B2C1A] text-[#4B2C1A] bg-white/90 hover:bg-white"
+          >
+            Go to Secret Access →
+          </button>
+
+          <p className="mt-4 text-xs text-center opacity-70">
+            <em>Keep it low-key, but your gym buddy might want in.</em>
+          </p>
+        </div>
+      </div>
+    </PageShell>
+  );
+}
+
 /* -------------------- Routes -------------------- */
 export default function App() {
   return (
     <>
       <Navbar />
       <Routes>
+        <Route path="/surprise" element={<Surprise />} />
         {/* Home (unchanged) */}
         <Route path="/" element={<BeautifulWelcomeSection />} />
 
