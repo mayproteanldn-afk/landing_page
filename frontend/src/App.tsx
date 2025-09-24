@@ -184,7 +184,7 @@ function About() {
           </div>
 
           {/* Right: visual */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 mt-8 md:mt-10 lg:mt-[88px]">
             <div className="rounded-2xl overflow-hidden border border-[#D2D2D2] h-80 md:h-[26rem] bg-[#FCFAF7]">
               <img
                 src={aboutHero}
@@ -195,6 +195,7 @@ function About() {
             </div>
           </div>
         </div>
+
 
         {/* What we make */}
         <section className="mt-12 md:mt-16">
