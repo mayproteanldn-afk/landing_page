@@ -20,6 +20,7 @@ const SHOW_PREORDER = false;
 const QR_PASSWORD = "ilyproteinboba";
 
 /* -------------------- maintenance mode -------------------- */
+/* -------------------- toggle via DO, switch key VITE_MAINTENANCE to False -------------------- */
 /** Toggle via DigitalOcean App Platform → Environment Variables → VITE_MAINTENANCE */
 const MAINTENANCE =
   (import.meta as any).env?.VITE_MAINTENANCE === "true";
