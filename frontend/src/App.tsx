@@ -582,7 +582,7 @@ function MaintenancePage() {
 
       {/* Headline */}
       <h1 className="display-font text-5xl md:text-6xl font-extrabold mb-4 text-center">
-        We’re brewing something new ☕️
+        We’re cooking up something new 🧋
       </h1>
       <p className="text-lg md:text-xl text-center opacity-90 mb-8 max-w-lg">
         Exciting things are coming... check back soon!
