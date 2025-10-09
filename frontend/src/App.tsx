@@ -8,6 +8,9 @@ import bgImage from "./assets/bg.jpg";
 import brandLogo from "./assets/BrandLogoBrown.png";
 import aboutHero from "./assets/Aboutpagedrink.png";
 
+import testerHero from "./assets/testerhero.png";
+
+
 
 /* -------------------- feature flags -------------------- */
 /* Flip these to true later when you want the pages live */
@@ -15,6 +18,11 @@ const SHOW_FAQS = false;
 const SHOW_PREORDER = false;
 /* -------------------- QR surprise password -------------------- */
 const QR_PASSWORD = "ilyproteinboba";
+
+/* -------------------- maintenance mode -------------------- */
+/** Toggle via DigitalOcean App Platform → Environment Variables → VITE_MAINTENANCE */
+const MAINTENANCE =
+  (import.meta as any).env?.VITE_MAINTENANCE === "true";
 
 
 /* -------------------- Top-right navbar -------------------- */
@@ -546,6 +554,66 @@ function SecretAccess() {
     </PageShell>
   );
 }
+/* -------------------- Maintenance Page -------------------- */
+function MaintenancePage() {
+  return (
+    <section
+      className="w-screen min-h-dvh flex flex-col items-center justify-center bg-center bg-cover text-[#4B2C1A]"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Logo */}
+      <img
+        src={brandLogo}
+        alt="Protean LDN logo"
+        className="h-20 w-20 rounded-full object-cover border-[1.5px] mb-6"
+        style={{ borderColor: "#D4AF37" }}
+      />
+
+      {/* Headline */}
+      <h1 className="display-font text-5xl md:text-6xl font-extrabold mb-4 text-center">
+        We’re brewing something new ☕️
+      </h1>
+      <p className="text-lg md:text-xl text-center opacity-90 mb-8 max-w-lg">
+        Exciting things are coming... check back soon!
+      </p>
+
+      {/* Instagram Button */}
+      <a
+        href="https://www.instagram.com/proteanldn/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-[#D4AF37] bg-white/80 hover:bg-[#fff8e1] transition"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="#4B2C1A"
+        >
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5" strokeWidth="2" />
+          <circle cx="12" cy="12" r="4" strokeWidth="2" />
+          <circle cx="18" cy="6" r="1.5" fill="#4B2C1A" />
+        </svg>
+        <span className="font-semibold text-[#4B2C1A]">@proteanldn</span>
+      </a>
+
+      {/* Teaser Image */}
+      <img
+        src={testerHero}
+        alt="Teaser visual"
+        className="mt-10 w-full max-w-md rounded-2xl shadow-lg border border-[#D2D2D2]"
+        loading="lazy"
+      />
+    </section>
+  );
+}
+
 
 /* -------------------- Hidden QR page: /surprise -------------------- */
 function Surprise() {
@@ -634,8 +702,13 @@ function Surprise() {
   );
 }
 
+
 /* -------------------- Routes -------------------- */
 export default function App() {
+  if (MAINTENANCE) {
+    return <MaintenancePage />;
+  }
+
   return (
     <>
       <Navbar />
