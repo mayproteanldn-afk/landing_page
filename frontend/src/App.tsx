@@ -576,9 +576,10 @@ function MaintenancePage() {
       <img
         src={brandLogo}
         alt="Protean LDN logo"
-        className="h-20 w-20 rounded-full object-cover border-[1.5px] mb-6"
+        className="h-[7.5rem] w-[7.5rem] md:h-[12rem] md:w-[12rem] rounded-full object-cover border-[1.5px] mb-6"
         style={{ borderColor: "#D4AF37" }}
       />
+
 
       {/* Headline */}
       <h1 className="display-font text-5xl md:text-6xl font-extrabold mb-4 text-center">
