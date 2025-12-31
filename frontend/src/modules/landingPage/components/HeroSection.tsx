@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 // Assets
 import brandLogo from "../../../assets/BrandLogoBrown.png";
 import heroPoster from "../../../assets/hero-poster.jpg";
@@ -6,10 +8,46 @@ import bgImage from "../../../assets/bg.jpg";
 // Video file is served from /public (place at frontend/public/videos/hero.mp4)
 const videoSrc = "/videos/hero.mp4";
 
+const API_BASE = "https://monkfish-app-9g9ua.ondigitalocean.app";
+
 export default function BeautifulWelcomeSection() {
+  const [firstName, setFirstName] = useState("");
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
+    "idle"
+  );
+  const [message, setMessage] = useState("");
+
+  const handleSubscribe = async () => {
+    setStatus("loading");
+    setMessage("");
+
+    try {
+      const res = await fetch(`${API_BASE}/api/subscribe`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ firstName, email }),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(data?.error || "Something went wrong");
+      }
+
+      setStatus("success");
+      setMessage("You’re on the list ✅");
+      setFirstName("");
+      setEmail("");
+    } catch (err: any) {
+      setStatus("error");
+      setMessage(err?.message || "Couldn’t sign you up — try again.");
+    }
+  };
+
   return (
     <>
-      {/* Fixed logo — top-left (now 50% bigger) */}
+      {/* Fixed logo — top-left */}
       <header className="fixed top-4 left-4 md:top-6 md:left-6 z-50">
         <img
           src={brandLogo}
@@ -29,8 +67,8 @@ export default function BeautifulWelcomeSection() {
       >
         <div className="flex-1 mx-auto max-w-7xl px-6 pt-6 md:pt-8 pb-1">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center md:items-start gap-8 md:gap-12">
-            {/* VIDEO: moved down the same amount as the text column */}
-            <div className="order-2 md:order-1 mb-8 md:mb-0 mt-6 md:mt-10">
+            {/* VIDEO */}
+            <div className="order-2 md:order-1 mb-8 md:mb-0 mt-6 md:mt-10 relative z-0">
               <div className="w-full rounded-xl overflow-hidden bg-transparent">
                 <video
                   className="
@@ -50,13 +88,14 @@ export default function BeautifulWelcomeSection() {
               </div>
             </div>
 
-            {/* CONTENT: moved down to match the video */}
-            <div className="order-1 md:order-2 text-center md:text-left mx-auto md:mx-0 mt-6 md:mt-10">
+            {/* CONTENT */}
+            <div className="order-1 md:order-2 text-center md:text-left mx-auto md:mx-0 mt-6 md:mt-10 relative z-10">
               {/* Launch line + Instagram */}
               <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                 <span className="block text-sm tracking-wider text-[#4B2C1A]">
                   LAUNCHING JANUARY 2026
                 </span>
+
                 <a
                   href="https://www.instagram.com/proteanldn/"
                   target="_blank"
@@ -102,34 +141,51 @@ export default function BeautifulWelcomeSection() {
                   Sign up to our waitlist now for priority access and secret discount codes.
                 </p>
 
-                {/* Signup form: first name + email */}
+                {/* Signup form */}
                 <div className="flex flex-col sm:flex-row items-center md:items-stretch justify-center md:justify-start gap-4">
                   <input
                     type="text"
                     name="firstName"
-                    placeholder="Enter your first name"
+                    placeholder="First name"
                     aria-label="First name"
                     autoComplete="given-name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
                     className="flex-1 w-full px-6 py-4 rounded-full border border-transparent
-                               focus:outline-none focus:ring-2 focus:ring-brown-300
-                               [background-color:#FFFCF3] [color:#4B2C1A] [placeholder-color:#FFFCF3]"
+                               focus:outline-none focus:ring-2 focus:ring-gray-300
+                               [background-color:#FFFCF3] [color:#4B2C1A] [placeholder-color:#A06C4D]"
                   />
+
                   <input
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder="Email"
+                    aria-label="Email"
+                    autoComplete="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="flex-1 w-full px-6 py-4 rounded-full border border-transparent
-                               focus:outline-none focus:ring-2 focus:ring-brown-300
+                               focus:outline-none focus:ring-2 focus:ring-gray-300
                                [background-color:#013220] [color:#FFFCF3] [placeholder-color:#FFFCF3]"
                   />
+
                   <button
                     type="button"
+                    onClick={handleSubscribe}
+                    disabled={status === "loading"}
                     className="px-6 py-4 rounded-full border-2 [border-color:#4B2C1A]
                                [background-color:#FFFCF3] [color:#4B2C1A] font-semibold
-                               hover:[background-color:#e9e2d1] transition-colors"
+                               hover:[background-color:#e9e2d1] transition-colors
+                               disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Get me in
+                    {status === "loading" ? "Adding..." : "Get me in"}
                   </button>
                 </div>
+
+                {message && (
+                  <p className="mt-3 text-sm text-[#4B2C1A] opacity-80">
+                    {message}
+                  </p>
+                )}
               </div>
             </div>
           </div>
