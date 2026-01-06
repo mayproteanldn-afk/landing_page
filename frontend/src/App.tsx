@@ -179,8 +179,7 @@ function About() {
                 <strong>found her true love - the gym - and lifting heavy circles</strong>.
                 <span className="block mt-2">
                   <strong>
-                    Whilst the supplement aisle was full of vanilla ice cream and
-                    nutella flavours, nothing tasted like home.
+                    Whilst the supplement aisle was full of vanilla, chocolate, and caramel flavours, nothing tasted like home.
                   </strong>{" "}
                   Nothing <em>scratched the itch</em> for the flavours she grew
                   up with while still helping her hit her goals. So she{" "}
