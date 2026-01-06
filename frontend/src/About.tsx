@@ -29,7 +29,7 @@ export default function About() {
                             We grew up loving bubble tea — and we lift. Refusing to choose between
                             <span className="italic"> liquid happiness</span> and macros, we’re building
                             <strong> Protean LDN</strong>: Asian-inspired, real tea–infused protein powders that taste like your
-                            favourites and fit your routine.
+                            favourite bubble teas and fit your routine.
                         </p>
                         <p className="text-lg md:text-xl mt-4">
                             Like many of us, she grew up in Asia where aunties (and everyone else) can comment on your body and
@@ -67,11 +67,11 @@ export default function About() {
                 <h2 className="font-display text-3xl md:text-4xl mb-4">What we make</h2>
 
                 <div className="rounded-xl bg-white shadow-[0_0_0_1px_var(--line)] p-5 md:p-6 text-muted">
-                    Protein you’ll actually crave — clean, considered, tea-led flavour.
+                    Protein you’ll actually crave — clean, authentic, tea-led flavour.
                 </div>
 
                 <div className="flex flex-wrap gap-3 mt-4">
-                    <span className="rounded-full bg-white shadow-[0_0_0_1px_var(--line)] px-4 py-2 text-sm">22–25g protein / serve</span>
+                    <span className="rounded-full bg-white shadow-[0_0_0_1px_var(--line)] px-4 py-2 text-sm">22g protein / serve</span>
                     <span className="rounded-full bg-white shadow-[0_0_0_1px_var(--line)] px-4 py-2 text-sm">Beloved Asian classics</span>
                 </div>
 

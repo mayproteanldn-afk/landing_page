@@ -222,7 +222,7 @@ function About() {
 
           <div className="flex flex-wrap gap-3 mt-4">
             <span className="rounded-full bg-white border border-[#D2D2D2] px-4 py-2 text-sm">
-              22–25g protein / serve
+              22g protein / serve
             </span>
             <span className="rounded-full bg-white border border-[#D2D2D2] px-4 py-2 text-sm">
               Beloved Asian classics
