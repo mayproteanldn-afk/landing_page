@@ -10,15 +10,6 @@ const videoSrc = "/videos/hero.mp4";
 
 const API_BASE = "https://monkfish-app-9g9ua.ondigitalocean.app";
 
-/** -------------------- Site copy constants (easy edits) -------------------- */
-const LAUNCH_DATE = "MARCH 2026";
-const PROTEIN_PER_SERVING = "22g";
-const LACTOSE_CLAIM = "Lactose-free";
-const FLAVOURS = [
-  "Matcha latte using ceremonial matcha",
-  "Brown sugar milk tea",
-];
-
 export default function BeautifulWelcomeSection() {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
@@ -102,7 +93,7 @@ export default function BeautifulWelcomeSection() {
               {/* Launch line + Instagram */}
               <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                 <span className="block text-sm tracking-wider text-[#4B2C1A]">
-                  LAUNCHING {LAUNCH_DATE}
+                  LAUNCHING MARCH 2026
                 </span>
 
                 <a
@@ -149,25 +140,32 @@ export default function BeautifulWelcomeSection() {
               {/* Copy */}
               <div className="max-w-2xl mx-auto md:mx-0 text-[#4B2C1A]">
                 <p className="text-lg md:text-[17px] xl:text-xl mb-3">
-                  Your new favourite protein shake is about to taste like bubble tea.
-                  Real tea, real benefits.
+                  Your new favourite protein shake is about to taste like bubble
+                  tea. Real tea, real benefits.
                 </p>
 
-                {/* Key product facts */}
-                <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-4">
+                {/* KEY PRODUCT LINE UPDATES */}
+                <p className="text-lg md:text-[17px] xl:text-xl mb-3">
+                  Launching in{" "}
+                  <strong>Matcha Latte</strong> and{" "}
+                  <strong>Brown Sugar Milk Tea</strong>.
+                </p>
+
+                <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-6">
                   <span className="rounded-full bg-white/80 border border-[#D2D2D2] px-4 py-2 text-sm">
-                    {PROTEIN_PER_SERVING} protein / serve
+                    22g protein / serving
                   </span>
                   <span className="rounded-full bg-white/80 border border-[#D2D2D2] px-4 py-2 text-sm">
-                    {LACTOSE_CLAIM}
+                    120 kcal / serving
                   </span>
                   <span className="rounded-full bg-white/80 border border-[#D2D2D2] px-4 py-2 text-sm">
-                    Flavours: {FLAVOURS.join(" • ")}
+                    Lactose-free
                   </span>
                 </div>
 
                 <p className="italic text-lg md:text-[17px] xl:text-xl mb-6">
-                  Sign up to our waitlist now for priority access and secret discount codes.
+                  Sign up to our waitlist now for priority access and secret
+                  discount codes.
                 </p>
 
                 {/* Signup form */}
