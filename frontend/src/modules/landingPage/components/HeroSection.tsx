@@ -12,7 +12,7 @@ const API_BASE = "https://monkfish-app-9g9ua.ondigitalocean.app";
 
 /** -------------------- Site copy constants (easy edits) -------------------- */
 const LAUNCH_DATE = "MARCH 2026";
-const PROTEIN_PER_SERVING = "25g";
+const PROTEIN_PER_SERVING = "22g";
 const LACTOSE_CLAIM = "Lactose-free";
 const FLAVOURS = [
   "Matcha latte using ceremonial matcha",
