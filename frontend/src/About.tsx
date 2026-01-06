@@ -75,7 +75,7 @@ export default function About() {
                 <h2 className="font-display text-3xl md:text-4xl mb-4">What we make</h2>
 
                 <div className="rounded-xl bg-white shadow-[0_0_0_1px_var(--line)] p-5 md:p-6 text-muted">
-                    Protein you’ll actually crave — clean, authentic, tea-led flavour.
+                    Protein you’ll actually crave — clean, delicious, authentic flavour.
                 </div>
 
                 <div className="flex flex-wrap gap-3 mt-4">
@@ -100,7 +100,7 @@ export default function About() {
             <section className="max-w-6xl mx-auto px-6 lg:px-8 py-10">
                 <div className="rounded-2xl bg-[#FCFAF7] shadow-[0_0_0_1px_var(--line)] p-6 md:p-8">
                     <blockquote className="font-display text-2xl md:text-3xl">
-                        “Whilst the supplement aisle was full of vanilla-ice-cream and Nutella flavours, nothing tasted like home.”
+                        “Whilst the supplement aisle was full of vanilla, chocolate, and caramel flavours, nothing tasted like home.”
                     </blockquote>
                     <p className="text-muted mt-3">
                         She found her true love — the gym — and lifting heavy circles… so she decided to build it herself.
