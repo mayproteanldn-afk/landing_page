@@ -113,13 +113,7 @@ export default function BeautifulWelcomeSection() {
                   >
                     <rect x="3" y="3" width="18" height="18" rx="5" />
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                    <circle
-                      cx="17.5"
-                      cy="6.5"
-                      r="1.25"
-                      fill="#4B2C1A"
-                      stroke="none"
-                    />
+                    <circle cx="17.5" cy="6.5" r="1.25" fill="#4B2C1A" stroke="none" />
                   </svg>
                 </a>
               </div>
@@ -140,32 +134,11 @@ export default function BeautifulWelcomeSection() {
               {/* Copy */}
               <div className="max-w-2xl mx-auto md:mx-0 text-[#4B2C1A]">
                 <p className="text-lg md:text-[17px] xl:text-xl mb-3">
-                  Your new favourite protein shake is about to taste like bubble
-                  tea. Real tea, real benefits.
+                  Your new favourite protein shake is about to taste like bubble tea.
+                  Real tea, real benefits.
                 </p>
-
-                {/* KEY PRODUCT LINE UPDATES */}
-                <p className="text-lg md:text-[17px] xl:text-xl mb-3">
-                  Launching in{" "}
-                  <strong>Matcha Latte</strong> and{" "}
-                  <strong>Brown Sugar Milk Tea</strong>.
-                </p>
-
-                <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-6">
-                  <span className="rounded-full bg-white/80 border border-[#D2D2D2] px-4 py-2 text-sm">
-                    22g protein / serving
-                  </span>
-                  <span className="rounded-full bg-white/80 border border-[#D2D2D2] px-4 py-2 text-sm">
-                    120 kcal / serving
-                  </span>
-                  <span className="rounded-full bg-white/80 border border-[#D2D2D2] px-4 py-2 text-sm">
-                    Lactose-free
-                  </span>
-                </div>
-
                 <p className="italic text-lg md:text-[17px] xl:text-xl mb-6">
-                  Sign up to our waitlist now for priority access and secret
-                  discount codes.
+                  Sign up to our waitlist now for priority access and secret discount codes.
                 </p>
 
                 {/* Signup form */}
