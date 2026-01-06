@@ -26,17 +26,17 @@ export default function About() {
                 <div className="lg:col-span-7 lg:row-start-2">
                     <div className="rounded-2xl bg-white shadow-[0_0_0_1px_var(--line)] p-6 md:p-7">
                         <p className="text-lg md:text-xl">
-                            We grew up loving bubble tea — and we lift. Refusing to choose between
+                            We grew up loving bubble tea - and we lift. Refusing to choose between
                             <span className="italic"> liquid happiness</span> and macros, we’re building
                             <strong> Protean LDN</strong>: Asian-inspired, real tea–infused protein powders that taste like your
                             favourite bubble teas and fit your routine.
                         </p>
                         <p className="text-lg md:text-xl mt-4">
-                            Like many of us, she grew up in Asia where aunties (and everyone else) can comment on your body and
-                            what’s on your plate in the same breath — well-meaning, but it can sting. She was the “chubby” kid.
+                            Like many of us, our founder grew up in Asia where aunties (and everyone else) can comment on your body and
+                            what’s on your plate in the same breath... Well-meaning, but it can sting. She was the “chubby” kid.
                             After moving to the UK, she <strong>found her true love - the gym - and lifting heavy circles</strong>.
                             <span className="block mt-2">
-                                <strong>Whilst the supplement aisle was full of vanilla-ice-cream and Nutella flavours, nothing tasted like home.</strong>{" "}
+                                <strong>Whilst the supplement aisle was full of vanilla, chocolate and caramel flavours, nothing tasted like home.</strong>{" "}
                                 Nothing <em>scratched the itch</em> for the flavours she grew up with while still helping her hit her goals.
                                 So she <strong>decided to build it herself</strong>.
                             </span>
@@ -76,8 +76,7 @@ export default function About() {
                 </div>
 
                 <p className="text-muted mt-3">
-                    <strong>Multi-serving pouches for launch</strong> — because once you’ve tried it, you’ll reach for it
-                    every time you’ve got macros to hit and cravings to satisfy.
+                    <strong>Single serving sachet for launch</strong> — to replace your daily matcha and bubble teas on the go.
                 </p>
             </section>
 
@@ -127,7 +126,7 @@ export default function About() {
                 <div className="relative">
                     <div className="h-1 bg-[var(--line)] rounded-full" />
                     <div className="flex justify-between -mt-3">
-                        {["Formulation", "Pre-order info to waitlist", "Soft launch: Jan 2026"].map((step, i) => (
+                        {["Formulation", "Pre-order info to waitlist", "Soft launch: March 2026"].map((step, i) => (
                             <div key={i} className="flex flex-col items-center">
                                 <div className="w-4 h-4 rounded-full bg-accent" />
                                 <span className="mt-3 text-sm">{step}</span>
