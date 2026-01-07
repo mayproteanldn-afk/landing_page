@@ -1,16 +1,14 @@
 import { Routes, Route, NavLink, Navigate, useNavigate, useLocation } from "react-router-dom";
 import React from "react";
 import BeautifulWelcomeSection from "./modules/landingPage/components/HeroSection";
+import About from "./About";
 
 // same background as Home
 import bgImage from "./assets/bg.jpg";
 // your logo for the subpages (top-left)
 import brandLogo from "./assets/BrandLogoBrown.png";
-import aboutHero from "./assets/Aboutpagedrink.png";
 
 import testerHero from "./assets/testerhero.png";
-
-
 
 /* -------------------- feature flags -------------------- */
 /* Flip these to true later when you want the pages live */
@@ -29,16 +27,12 @@ const MAINTENANCE =
     .toLowerCase() === "true";
 console.log("MAINTENANCE =", MAINTENANCE, "raw =", (import.meta as any).env?.VITE_MAINTENANCE);
 
-
-
 /* -------------------- Top-right navbar -------------------- */
 function Navbar() {
-  const base =
-    "text-[#A06C4D] tracking-wide transition-colors text-lg md:text-xl";
+  const base = "text-[#A06C4D] tracking-wide transition-colors text-lg md:text-xl";
   const active = "font-semibold";
 
-  const linkClass = ({ isActive }: { isActive: boolean }) =>
-    `${base} ${isActive ? active : ""}`;
+  const linkClass = ({ isActive }: { isActive: boolean }) => `${base} ${isActive ? active : ""}`;
 
   return (
     <nav className="fixed top-6 inset-x-0 z-50">
@@ -68,7 +62,6 @@ function Navbar() {
             Secret Access
           </NavLink>
         </li>
-
 
         {SHOW_PREORDER && (
           <li>
@@ -127,214 +120,18 @@ function FAQs() {
     <PageShell>
       <div className="max-w-3xl mx-auto text-[#4B2C1A]">
         <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-6">FAQs</h1>
-        <p className="text-lg md:text-xl opacity-80">
-          Add your common questions and answers here.
-        </p>
+        <p className="text-lg md:text-xl opacity-80">Add your common questions and answers here.</p>
       </div>
     </PageShell>
   );
 }
-
-/* --- tiny icon used on About --- */
-function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.75a6.25 6.25 0 1 1 0 12.5 6.25 6.25 0 0 1 0-12.5zm0 2a4.25 4.25 0 1 0 0 8.5 4.25 4.25 0 0 0 0-8.5zM18.5 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-    </svg>
-  );
-}
-
-function About() {
-  return (
-    <PageShell>
-      {/* outer wrapper overrides parent center alignment */}
-      <div className="max-w-6xl mx-auto text-left text-[#4B2C1A]">
-        {/* Our why (split) */}
-        {/* NOTE: add explicit grid rows so we can align the image with the card */}
-        <div className="grid lg:grid-cols-12 lg:grid-rows-[auto_1fr] gap-10 mt-10 md:mt-12">
-          {/* Left: heading (row 1) */}
-          <div className="lg:col-span-7 lg:row-start-1">
-            <p className="text-sm opacity-70 mb-3">About Protean LDN</p>
-            <h1 className="display-font !font-normal text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-              Our why
-            </h1>
-          </div>
-
-          {/* Left: white card + link (row 2) */}
-          <div className="lg:col-span-7 lg:row-start-2">
-            <div className="rounded-2xl bg-white border border-[#D2D2D2] p-6 md:p-7 shadow-sm">
-              <p className="text-lg md:text-xl">
-                We grew up loving bubble tea — and we lift. Refusing to choose
-                between <em>liquid happiness</em> and macros, we’re building{" "}
-                <strong>Protean LDN</strong>: Asian-inspired, real tea–infused
-                protein powders that taste like your favourites and fit your
-                routine.
-              </p>
-
-              <p className="text-lg md:text-xl mt-4">
-                Like many of us, she grew up in Asia where aunties (and everyone
-                else) can comment on your body and what’s on your plate in the
-                same breath — well-meaning, but it can sting. She was the
-                “chubby” kid. After moving to the UK, she{" "}
-                <strong>found her true love - the gym - and lifting heavy circles</strong>.
-                <span className="block mt-2">
-                  <strong>
-                    Whilst the supplement aisle was full of vanilla, chocolate, and caramel flavours, nothing tasted like home.
-                  </strong>{" "}
-                  Nothing <em>scratched the itch</em> for the flavours she grew
-                  up with while still helping her hit her goals. So she{" "}
-                  <strong>decided to build it herself</strong>.
-                </span>
-              </p>
-            </div>
-
-            <a
-              href="/"
-              className="inline-block mt-4 text-[#5e8c31] underline underline-offset-4"
-            >
-              Join the waitlist →
-            </a>
-          </div>
-
-          {/* Right: visual (row 2 to align with white card top) */}
-          <div className="lg:col-span-5 lg:row-start-2 lg:self-start mt-8 md:mt-10 lg:mt-0">
-            <div className="rounded-2xl overflow-hidden border border-[#D2D2D2] h-80 md:h-[26rem] bg-[#FCFAF7]">
-              <img
-                src={aboutHero}
-                alt="Unbranded shaker with matcha liquid and soft shadow"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* What we make */}
-        <section className="mt-12 md:mt-16">
-          <h2 className="display-font !font-normal text-3xl md:text-4xl font-extrabold mb-4">
-            What we make
-          </h2>
-
-          <div className="rounded-xl bg-white border border-[#D2D2D2] p-5 md:p-6 text-[#5A605E]">
-            Protein you’ll actually crave ~ delicious, smooth, and made using real tea.
-          </div>
-
-          <div className="flex flex-wrap gap-3 mt-4">
-            <span className="rounded-full bg-white border border-[#D2D2D2] px-4 py-2 text-sm">
-              22g protein / serve
-            </span>
-            <span className="rounded-full bg-white border border-[#D2D2D2] px-4 py-2 text-sm">
-              Beloved Asian classics
-            </span>
-          </div>
-
-          <p className="text-[#5A605E] mt-3">
-            <strong>Multi-serving pouches for launch</strong> — because once
-            you’ve tried it, you’ll reach for it every time you crave bubble tea and have macros to hit.
-          </p>
-        </section>
-
-        {/* Founder pull-quote */}
-        <section className="mt-10 md:mt-12">
-          <div className="rounded-2xl bg-[#FCFAF7] border border-[#D2D2D2] p-6 md:p-8">
-            <blockquote className="text-2xl md:text-3xl font-semibold">
-              “Whilst the supplement aisle was full of vanilla-ice-cream and
-              Nutella flavours, nothing tasted like home.”
-            </blockquote>
-            <p className="text-[#5A605E] mt-3">
-              So she decided to build it herself.
-            </p>
-          </div>
-        </section>
-
-        {/* Flavours */}
-        <section className="mt-10 md:mt-12">
-          <h2 className="display-font !font-normal text-3xl md:text-4xl font-extrabold mb-6">
-            Launch flavours (teaser)
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-5">
-            <div className="rounded-2xl bg-white border border-[#D2D2D2] p-6">
-              <div className="w-14 h-14 rounded-full bg-[#F5F5F5] border border-[#D2D2D2] mb-4" />
-              <p>Matcha latte using ceremonial matcha</p>
-            </div>
-
-            <div className="rounded-2xl bg-white border border-[#D2D2D2] p-6">
-              <div className="w-14 h-14 rounded-full bg-[#F5F5F5] border border-[#D2D2D2] mb-4" />
-              <p>Brown sugar milk tea</p>
-            </div>
-
-            <div className="rounded-2xl bg-white border border-[#D2D2D2] p-6">
-              <div className="w-14 h-14 rounded-full bg-[#F5F5F5] border border-[#D2D2D2] mb-4" />
-              <p>
-                Fruit tea flavour (to be decided by you). Let us know what
-                flavour you’d like to see via our Instagram
-              </p>
-              <a
-                href="https://www.instagram.com/proteanldn/"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3 inline-flex items-center gap-2 text-[#5A605E] hover:text-[#4B2C1A]"
-              >
-                <InstagramIcon className="w-5 h-5" />
-                @proteanldn
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* Timeline */}
-        <section className="mt-10 md:mt-12">
-          <h2 className="display-font !font-normal text-3xl md:text-4xl font-extrabold mb-6">
-            Where we’re at
-          </h2>
-
-          <div className="relative">
-            <div className="h-1 bg-[#D2D2D2] rounded-full" />
-            <div className="flex justify-between -mt-3">
-              {["Formulation", "Pre-order info to waitlist", "Soft launch: Jan 2026"].map((step, i) => (
-                <div key={i} className="flex flex-col items-center">
-                  <div className="w-4 h-4 rounded-full bg-[#5e8c31]" />
-                  <span className="mt-3 text-sm">{step}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <p className="text-[#5A605E] mt-4">
-            Small-batch on purpose. We’ll keep you posted by email.
-          </p>
-        </section>
-
-        {/* CTA */}
-        <section className="mt-8 md:mt-10">
-          <div className="rounded-2xl bg-[#FCFAF7] border border-[#D2D2D2] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-lg md:text-xl">
-              Want first access and secret discounts?
-            </p>
-            <a
-              href="/"
-              className="inline-flex items-center justify-center rounded-full px-6 py-3 text-white"
-              style={{ background: "#5e8c31" }}
-            >
-              Join the waitlist
-            </a>
-          </div>
-        </section>
-      </div>
-    </PageShell>
-  );
-}
-
 
 function PreOrder() {
   return (
     <PageShell>
       <div className="max-w-3xl mx-auto text-[#4B2C1A]">
         <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-6">Pre-Order</h1>
-        <p className="text-lg md:text-xl opacity-80">
-          Put your pre-order form or “coming soon” content here.
-        </p>
+        <p className="text-lg md:text-xl opacity-80">Put your pre-order form or “coming soon” content here.</p>
       </div>
     </PageShell>
   );
@@ -348,7 +145,7 @@ function SecretAccess() {
 
   const [pw, setPw] = React.useState("");
   const [pwError, setPwError] = React.useState("");
-  // 👇 Add this block
+
   const location = useLocation() as { state?: { prefillPw?: string } };
 
   React.useEffect(() => {
@@ -356,9 +153,8 @@ function SecretAccess() {
     if (incoming) setPw(incoming);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // 👆 End new block
-  const SECRET =
-    (import.meta as any).env?.VITE_SECRET_ACCESS_PW || "ilyproteinboba";
+
+  const SECRET = (import.meta as any).env?.VITE_SECRET_ACCESS_PW || "ilyproteinboba";
 
   function handleUnlock(e: React.FormEvent) {
     e.preventDefault();
@@ -421,9 +217,7 @@ function SecretAccess() {
               Secret Access
             </h1>
 
-            <p className="text-center opacity-80 mb-6">
-              Enter the password to unlock exclusive content.
-            </p>
+            <p className="text-center opacity-80 mb-6">Enter the password to unlock exclusive content.</p>
 
             <form
               onSubmit={handleUnlock}
@@ -469,9 +263,7 @@ function SecretAccess() {
           <h1 className="display-font !font-normal text-5xl md:text-6xl font-extrabold leading-tight">
             Welcome to the land of gains and flavour
           </h1>
-          <p className="mt-4 text-lg opacity-90">
-            Pop in your details to confirm access.
-          </p>
+          <p className="mt-4 text-lg opacity-90">Pop in your details to confirm access.</p>
 
           <form
             onSubmit={handleFormSubmit}
@@ -510,12 +302,9 @@ function SecretAccess() {
               </div>
             </div>
 
-            {formError && (
-              <p className="mt-3 text-sm text-red-700">{formError}</p>
-            )}
+            {formError && <p className="mt-3 text-sm text-red-700">{formError}</p>}
 
             <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-
               <button
                 type="submit"
                 className="rounded-xl px-5 py-3 font-semibold text-white"
@@ -541,12 +330,8 @@ function SecretAccess() {
       {/* SUCCESS */}
       {step === "done" && (
         <div className="mx-auto max-w-xl text-[#4B2C1A] mt-28 md:mt-32 text-center">
-          <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-4">
-            You’re in 🎉
-          </h1>
-          <p className="text-lg">
-            You're in, keep an eye out on your inbox for a surprise ;)
-          </p>
+          <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-4">You’re in 🎉</h1>
+          <p className="text-lg">You're in, keep an eye out on your inbox for a surprise ;)</p>
           <button
             className="mt-8 rounded-xl px-6 py-3 font-semibold text-white"
             style={{ background: "#5e8c31" }}
@@ -559,6 +344,7 @@ function SecretAccess() {
     </PageShell>
   );
 }
+
 /* -------------------- Maintenance Page -------------------- */
 function MaintenancePage() {
   return (
@@ -579,7 +365,6 @@ function MaintenancePage() {
         style={{ borderColor: "#D4AF37" }}
       />
 
-
       {/* Headline */}
       <h1 className="display-font text-5xl md:text-6xl font-extrabold mb-4 text-center">
         We’re cooking up something new 🧋
@@ -595,13 +380,7 @@ function MaintenancePage() {
         rel="noopener noreferrer"
         className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-[#D4AF37] bg-white/80 hover:bg-[#fff8e1] transition"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="#4B2C1A"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#4B2C1A">
           <rect width="20" height="20" x="2" y="2" rx="5" ry="5" strokeWidth="2" />
           <circle cx="12" cy="12" r="4" strokeWidth="2" />
           <circle cx="18" cy="6" r="1.5" fill="#4B2C1A" />
@@ -619,7 +398,6 @@ function MaintenancePage() {
     </section>
   );
 }
-
 
 /* -------------------- Hidden QR page: /surprise -------------------- */
 function Surprise() {
@@ -644,21 +422,22 @@ function Surprise() {
       setCopied(true);
       setTimeout(() => setCopied(false), 1600);
     } catch {
-      // Fallback if clipboard API isn't available
       const ta = document.createElement("textarea");
       ta.value = QR_PASSWORD;
       ta.style.position = "fixed";
       ta.style.opacity = "0";
       document.body.appendChild(ta);
       ta.select();
-      try { document.execCommand("copy"); setCopied(true); } catch { }
+      try {
+        document.execCommand("copy");
+        setCopied(true);
+      } catch {}
       document.body.removeChild(ta);
       setTimeout(() => setCopied(false), 1600);
     }
   }
 
   function goToSecret() {
-    // pass the password along so SecretAccess can prefill
     navigate("/secret", { state: { prefillPw: QR_PASSWORD } });
   }
 
@@ -707,7 +486,6 @@ function Surprise() {
     </PageShell>
   );
 }
-
 
 /* -------------------- Routes -------------------- */
 export default function App() {
