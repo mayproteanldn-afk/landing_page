@@ -10,6 +10,8 @@ import React from "react";
 import BeautifulWelcomeSection from "./modules/landingPage/components/HeroSection";
 import About from "./About";
 import OurProducts from "./OurProducts";
+import TheWellnessDrive from "./TheWellnessDrive";
+
 
 // same background as Home
 import bgImage from "./assets/bg.jpg";
@@ -517,6 +519,7 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/surprise" element={<Surprise />} />
+        <Route path="/thewellnessdrive" element={<TheWellnessDrive />} />
 
         {/* Home */}
         <Route path="/" element={<BeautifulWelcomeSection />} />
