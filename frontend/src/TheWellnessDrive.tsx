@@ -149,9 +149,6 @@ export default function TheWellnessDrive() {
                         Back to Home
                     </a>
 
-                    <p className="mt-4 text-xs opacity-70">
-                        (Anyone with the link can view this page — it’s just not listed on the main site.)
-                    </p>
                 </div>
             </div>
 
