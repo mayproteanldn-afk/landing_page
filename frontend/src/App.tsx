@@ -1,9 +1,15 @@
-import { Routes, Route, NavLink, Navigate, useNavigate, useLocation } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  NavLink,
+  Navigate,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import React from "react";
 import BeautifulWelcomeSection from "./modules/landingPage/components/HeroSection";
-import TheWellnessDrive from "./TheWellnessDrive";
-import OurProducts from "./OurProducts";
 import About from "./About";
+import OurProducts from "./OurProducts";
 
 // same background as Home
 import bgImage from "./assets/bg.jpg";
@@ -16,25 +22,24 @@ import testerHero from "./assets/testerhero.png";
 /* Flip these to true later when you want the pages live */
 const SHOW_FAQS = false;
 const SHOW_PREORDER = false;
+
 /* -------------------- QR surprise password -------------------- */
 const QR_PASSWORD = "ilyproteinboba";
 
 /* -------------------- maintenance mode -------------------- */
-/* -------------------- toggle via DO, switch key VITE_MAINTENANCE to False -------------------- */
 /** Toggle via DigitalOcean App Platform → Environment Variables → VITE_MAINTENANCE */
-// safer read: handles TRUE/True/true and missing values
 const MAINTENANCE =
   String((import.meta as any).env?.VITE_MAINTENANCE ?? "")
     .trim()
     .toLowerCase() === "true";
-console.log("MAINTENANCE =", MAINTENANCE, "raw =", (import.meta as any).env?.VITE_MAINTENANCE);
 
 /* -------------------- Top-right navbar -------------------- */
 function Navbar() {
   const base = "text-[#A06C4D] tracking-wide transition-colors text-lg md:text-xl";
   const active = "font-semibold";
 
-  const linkClass = ({ isActive }: { isActive: boolean }) => `${base} ${isActive ? active : ""}`;
+  const linkClass = ({ isActive }: { isActive: boolean }) =>
+    `${base} ${isActive ? active : ""}`;
 
   return (
     <nav className="fixed top-6 inset-x-0 z-50">
@@ -84,7 +89,8 @@ function Navbar() {
 }
 
 /* -------------------- Shared shell for subpages -------------------- */
-function PageShell({ children }: { children: React.ReactNode }) {
+/** Exported so other pages can reuse the exact same layout (bg + logo + footer). */
+export function PageShell({ children }: { children: React.ReactNode }) {
   return (
     <section
       className="w-screen min-h-dvh overflow-x-hidden font-sans bg-center bg-cover bg-no-repeat flex flex-col"
@@ -109,7 +115,7 @@ function PageShell({ children }: { children: React.ReactNode }) {
         />
       </a>
 
-      {/* Keep the same top padding (no vertical re-centering), center horizontally */}
+      {/* Keep the same top padding, center horizontally */}
       <div className="flex-1 mx-auto max-w-7xl px-6 pt-4 md:pt-6 pb-1">
         <div className="mx-auto text-center">{children}</div>
       </div>
@@ -127,8 +133,12 @@ function FAQs() {
   return (
     <PageShell>
       <div className="max-w-3xl mx-auto text-[#4B2C1A]">
-        <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-6">FAQs</h1>
-        <p className="text-lg md:text-xl opacity-80">Add your common questions and answers here.</p>
+        <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-6">
+          FAQs
+        </h1>
+        <p className="text-lg md:text-xl opacity-80">
+          Add your common questions and answers here.
+        </p>
       </div>
     </PageShell>
   );
@@ -138,8 +148,12 @@ function PreOrder() {
   return (
     <PageShell>
       <div className="max-w-3xl mx-auto text-[#4B2C1A]">
-        <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-6">Pre-Order</h1>
-        <p className="text-lg md:text-xl opacity-80">Put your pre-order form or “coming soon” content here.</p>
+        <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-6">
+          Pre-Order
+        </h1>
+        <p className="text-lg md:text-xl opacity-80">
+          Put your pre-order form or “coming soon” content here.
+        </p>
       </div>
     </PageShell>
   );
@@ -147,8 +161,8 @@ function PreOrder() {
 
 /* -------------------- Secret Access page -------------------- */
 function SecretAccess() {
-  const [step, setStep] = React.useState<"locked" | "form" | "done">(
-    () => (localStorage.getItem("secretUnlocked") === "1" ? "form" : "locked")
+  const [step, setStep] = React.useState<"locked" | "form" | "done">(() =>
+    localStorage.getItem("secretUnlocked") === "1" ? "form" : "locked"
   );
 
   const [pw, setPw] = React.useState("");
@@ -185,7 +199,6 @@ function SecretAccess() {
     const emailOk = /^\S+@\S+\.\S+$/.test(email);
     if (!emailOk) return setFormError("Please enter a valid email address.");
     setFormError("");
-    // TODO: integrate with your waitlist/ESP
     setStep("done");
   }
 
@@ -194,7 +207,6 @@ function SecretAccess() {
       {/* LOCKED */}
       {step === "locked" && (
         <div className="relative">
-          {/* blurred preview background */}
           <div
             className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none select-none"
             aria-hidden="true"
@@ -219,13 +231,14 @@ function SecretAccess() {
             </div>
           </div>
 
-          {/* unlock card */}
           <div className="mx-auto max-w-md text-left text-[#4B2C1A] mt-24 md:mt-28">
             <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-4 text-center">
               Secret Access
             </h1>
 
-            <p className="text-center opacity-80 mb-6">Enter the password to unlock exclusive content.</p>
+            <p className="text-center opacity-80 mb-6">
+              Enter the password to unlock exclusive content.
+            </p>
 
             <form
               onSubmit={handleUnlock}
@@ -252,7 +265,6 @@ function SecretAccess() {
                 </p>
               )}
 
-              {/* GOLD unlock button (no pro-tip) */}
               <button
                 type="submit"
                 className="mt-4 w-full rounded-xl px-4 py-3 font-semibold text-[#8C6E1E] shadow-sm border border-[#C9A227] hover:bg-[#C9A227] transition-colors"
@@ -338,7 +350,9 @@ function SecretAccess() {
       {/* SUCCESS */}
       {step === "done" && (
         <div className="mx-auto max-w-xl text-[#4B2C1A] mt-28 md:mt-32 text-center">
-          <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-4">You’re in 🎉</h1>
+          <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-4">
+            You’re in 🎉
+          </h1>
           <p className="text-lg">You're in, keep an eye out on your inbox for a surprise ;)</p>
           <button
             className="mt-8 rounded-xl px-6 py-3 font-semibold text-white"
@@ -365,7 +379,6 @@ function MaintenancePage() {
         backgroundPosition: "center",
       }}
     >
-      {/* Logo */}
       <img
         src={brandLogo}
         alt="Protean LDN logo"
@@ -373,7 +386,6 @@ function MaintenancePage() {
         style={{ borderColor: "#D4AF37" }}
       />
 
-      {/* Headline */}
       <h1 className="display-font text-5xl md:text-6xl font-extrabold mb-4 text-center">
         We’re cooking up something new 🧋
       </h1>
@@ -381,14 +393,19 @@ function MaintenancePage() {
         Exciting things are coming... check back soon!
       </p>
 
-      {/* Instagram Button */}
       <a
         href="https://www.instagram.com/proteanldn/"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-[#D4AF37] bg-white/80 hover:bg-[#fff8e1] transition"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#4B2C1A">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="#4B2C1A"
+        >
           <rect width="20" height="20" x="2" y="2" rx="5" ry="5" strokeWidth="2" />
           <circle cx="12" cy="12" r="4" strokeWidth="2" />
           <circle cx="18" cy="6" r="1.5" fill="#4B2C1A" />
@@ -396,7 +413,6 @@ function MaintenancePage() {
         <span className="font-semibold text-[#4B2C1A]">@proteanldn</span>
       </a>
 
-      {/* Teaser Image */}
       <img
         src={testerHero}
         alt="Teaser visual"
@@ -411,7 +427,6 @@ function MaintenancePage() {
 function Surprise() {
   const navigate = useNavigate();
 
-  // Add noindex so this page isn't indexed by search engines
   React.useEffect(() => {
     const meta = document.createElement("meta");
     meta.name = "robots";
@@ -451,7 +466,6 @@ function Surprise() {
 
   return (
     <PageShell>
-      {/* overlay modal */}
       <div className="fixed inset-0 z-50 bg-black/30 flex items-center justify-center p-4">
         <div className="w-full max-w-md rounded-2xl bg-white/95 backdrop-blur border border-[#D2D2D2] shadow-xl p-6 text-[#4B2C1A]">
           <h1 className="display-font !font-normal text-3xl md:text-4xl font-extrabold text-center">
@@ -462,7 +476,6 @@ function Surprise() {
             Use this secret password on our access page to unlock an exclusive discount when we launch.
           </p>
 
-          {/* password + copy */}
           <div className="mt-5 flex gap-3 items-stretch">
             <div className="flex-1 rounded-xl border border-[#D2D2D2] bg-[#FFFCF3] px-4 py-3 text-center break-all select-all">
               {QR_PASSWORD}
@@ -497,19 +510,16 @@ function Surprise() {
 
 /* -------------------- Routes -------------------- */
 export default function App() {
-  if (MAINTENANCE) {
-    return <MaintenancePage />;
-  }
+  if (MAINTENANCE) return <MaintenancePage />;
 
   return (
     <>
       <Navbar />
       <Routes>
         <Route path="/surprise" element={<Surprise />} />
-        {/* Home (unchanged) */}
+
+        {/* Home */}
         <Route path="/" element={<BeautifulWelcomeSection />} />
-        {/* New Hidden Porsche Event Page */}
-        <Route path="/thewellnessdrive" element={<TheWellnessDrive />} />
 
         {/* FAQs: hidden -> redirect to Home */}
         {SHOW_FAQS ? (
@@ -518,12 +528,14 @@ export default function App() {
           <Route path="/faqs" element={<Navigate to="/" replace />} />
         )}
 
-        {/* About (visible) */}
+        {/* About */}
         <Route path="/about" element={<About />} />
 
-        <Route path="/secret" element={<SecretAccess />} />
-        {/* Our Products Page */}
+        {/* Our Products */}
         <Route path="/our-products" element={<OurProducts />} />
+
+        {/* Secret Access */}
+        <Route path="/secret" element={<SecretAccess />} />
 
         {/* Pre-Order: hidden -> redirect to Home */}
         {SHOW_PREORDER ? (
