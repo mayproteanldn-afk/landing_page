@@ -1,10 +1,8 @@
-// frontend/src/OurProducts.tsx
-
 import bgImage from "./assets/bg.jpg";
 import brandLogo from "./assets/BrandLogoBrown.png";
 
 import matchaTile from "./assets/MatchaLatteTile.png";
-import brownSugarTile from "./assets/BrownSugarMilkTeaTile.png";
+import brownSugarTile from "./assets/BrownSugarMilk TeaTile.png";
 
 type Macro = { label: string; value: string };
 
@@ -50,7 +48,7 @@ function ProductTile({
                     </span>
                 </div>
 
-                {/* Image - front and centre */}
+                {/* Image */}
                 <div className="mt-5 rounded-2xl overflow-hidden border border-[#D2D2D2] bg-[#FCFAF7]">
                     <img
                         src={imageSrc}
@@ -98,7 +96,7 @@ export default function OurProducts() {
                 backgroundPosition: "center",
             }}
         >
-            {/* Top-left logo */}
+            {/* Logo */}
             <a
                 href="/"
                 aria-label="Protean LDN — Home"
@@ -122,17 +120,16 @@ export default function OurProducts() {
                         but make it macros.
                     </h1>
 
-                    {/* Fun blend + dietary copy */}
+                    {/* Blend + dietary copy */}
                     <div className="mt-5 mx-auto max-w-3xl rounded-3xl bg-white/85 backdrop-blur border border-[#D2D2D2] shadow-xl p-6 md:p-7 text-left">
                         <p className="text-lg md:text-xl">
                             A{" "}
                             <strong className="text-[#4B2C1A]">
                                 premium whey protein blend
                             </strong>{" "}
-                            (mostly Whey Protein Concentrate at{" "}
-                            <strong>80%</strong>, topped up with{" "}
-                            <strong>Whey Protein Isolate</strong>) — smooth, satisfying, and
-                            designed to taste like the stuff you actually crave.
+                            (of Whey Protein Concentrate and Whey Protein Isolate) - smooth,
+                            satisfying, and designed to taste like the stuff you actually
+                            crave.
                         </p>
 
                         <div className="mt-4 flex flex-wrap gap-3">
@@ -149,7 +146,7 @@ export default function OurProducts() {
                     </div>
                 </div>
 
-                {/* Tiles */}
+                {/* Products */}
                 <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
                     <ProductTile
                         title="Matcha latte using ceremonial matcha"
@@ -166,7 +163,7 @@ export default function OurProducts() {
                     />
                 </div>
 
-                {/* Launch format line */}
+                {/* Format */}
                 <div className="mt-10 text-center">
                     <div className="inline-flex items-center justify-center rounded-full bg-white/85 backdrop-blur border border-[#D2D2D2] shadow-sm px-6 py-3 text-[#4B2C1A]">
                         <span className="font-semibold">
@@ -188,7 +185,6 @@ export default function OurProducts() {
                 </div>
             </div>
 
-            {/* Footer */}
             <footer className="pb-2 text-center text-xs text-[#4B2C1A]">
                 ©{new Date().getFullYear()} Protean LDN. All rights reserved.
             </footer>
