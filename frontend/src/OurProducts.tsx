@@ -17,7 +17,9 @@ function MacroRow({ items }: { items: Macro[] }) {
                     <div className="text-xs tracking-wider text-[#A06C4D] uppercase">
                         {m.label}
                     </div>
-                    <div className="text-lg font-semibold text-[#4B2C1A]">{m.value}</div>
+                    <div className="text-lg font-semibold text-[#4B2C1A]">
+                        {m.value}
+                    </div>
                 </div>
             ))}
         </div>
@@ -113,7 +115,9 @@ export default function OurProducts() {
             <div className="flex-1 mx-auto max-w-6xl px-6 pt-24 md:pt-28 pb-8">
                 {/* Header */}
                 <div className="text-center text-[#4B2C1A]">
-                    <p className="text-sm tracking-wider opacity-80 mb-3">OUR PRODUCTS</p>
+                    <p className="text-sm tracking-wider opacity-80 mb-3">
+                        OUR PRODUCTS
+                    </p>
                     <h1 className="display-font !font-normal text-5xl md:text-6xl font-extrabold mb-3">
                         Your bubble tea cravings,
                         <br className="hidden sm:block" />
@@ -127,9 +131,9 @@ export default function OurProducts() {
                             <strong className="text-[#4B2C1A]">
                                 premium whey protein blend
                             </strong>{" "}
-                            (of Whey Protein Concentrate and Whey Protein Isolate) - smooth,
-                            satisfying, and designed to taste like the stuff you actually
-                            crave.
+                            (of Whey Protein Concentrate and Whey Protein Isolate)
+                            - smooth, satisfying, and designed to taste like the
+                            stuff you actually crave.
                         </p>
 
                         <div className="mt-4 flex flex-wrap gap-3">
@@ -151,14 +155,14 @@ export default function OurProducts() {
                     <ProductTile
                         title="Matcha latte using ceremonial matcha"
                         imageSrc={matchaTile}
-                        badgeText="Premium whey protein blend"
+                        badgeText="Made with ceremonial matcha"
                         macros={macrosMatcha}
                     />
 
                     <ProductTile
                         title="Brown sugar milk tea"
                         imageSrc={brownSugarTile}
-                        badgeText="Premium whey protein blend"
+                        badgeText="Made with real tea"
                         macros={macrosBrownSugar}
                     />
                 </div>
@@ -167,8 +171,8 @@ export default function OurProducts() {
                 <div className="mt-10 text-center">
                     <div className="inline-flex items-center justify-center rounded-full bg-white/85 backdrop-blur border border-[#D2D2D2] shadow-sm px-6 py-3 text-[#4B2C1A]">
                         <span className="font-semibold">
-                            Single-serving sachets for satisfying your bubble tea cravings on
-                            the go
+                            Single-serving sachets for satisfying your bubble tea
+                            cravings on the go
                         </span>
                     </div>
                 </div>
