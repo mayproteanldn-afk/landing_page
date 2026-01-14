@@ -4,7 +4,7 @@ import bgImage from "./assets/bg.jpg";
 import brandLogo from "./assets/BrandLogoBrown.png";
 
 import matchaTile from "./assets/MatchaLatteTile.png";
-import brownSugarTile from "./assets/BrownSugarMilk TeaTile.png";
+import brownSugarTile from "./assets/BrownSugarMilkTeaTile.png";
 
 type Macro = { label: string; value: string };
 
