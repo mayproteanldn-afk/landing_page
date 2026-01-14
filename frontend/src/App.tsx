@@ -528,11 +528,12 @@ export default function App() {
           <Route path="/faqs" element={<Navigate to="/" replace />} />
         )}
 
-        {/* About */}
-        <Route path="/about" element={<About />} />
 
         {/* Our Products */}
         <Route path="/our-products" element={<OurProducts />} />
+
+        {/* About */}
+        <Route path="/about" element={<About />} />
 
         {/* Secret Access */}
         <Route path="/secret" element={<SecretAccess />} />
