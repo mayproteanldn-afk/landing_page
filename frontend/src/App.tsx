@@ -1,6 +1,7 @@
 import { Routes, Route, NavLink, Navigate, useNavigate, useLocation } from "react-router-dom";
 import React from "react";
 import BeautifulWelcomeSection from "./modules/landingPage/components/HeroSection";
+import TheWellnessDrive from "./TheWellnessDrive";
 import About from "./About";
 
 // same background as Home
@@ -431,7 +432,7 @@ function Surprise() {
       try {
         document.execCommand("copy");
         setCopied(true);
-      } catch {}
+      } catch { }
       document.body.removeChild(ta);
       setTimeout(() => setCopied(false), 1600);
     }
@@ -500,6 +501,8 @@ export default function App() {
         <Route path="/surprise" element={<Surprise />} />
         {/* Home (unchanged) */}
         <Route path="/" element={<BeautifulWelcomeSection />} />
+        {/* New Hidden Porsche Event Page */}
+        <Route path="/thewellnessdrive" element={<TheWellnessDrive />} />
 
         {/* FAQs: hidden -> redirect to Home */}
         {SHOW_FAQS ? (
