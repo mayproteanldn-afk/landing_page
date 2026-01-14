@@ -2,6 +2,7 @@ import { Routes, Route, NavLink, Navigate, useNavigate, useLocation } from "reac
 import React from "react";
 import BeautifulWelcomeSection from "./modules/landingPage/components/HeroSection";
 import TheWellnessDrive from "./TheWellnessDrive";
+import OurProducts from "./OurProducts";
 import About from "./About";
 
 // same background as Home
@@ -55,6 +56,12 @@ function Navbar() {
         <li>
           <NavLink to="/about" className={linkClass}>
             About
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink to="/our-products" className={linkClass}>
+            Our Products
           </NavLink>
         </li>
 
@@ -515,6 +522,8 @@ export default function App() {
         <Route path="/about" element={<About />} />
 
         <Route path="/secret" element={<SecretAccess />} />
+        {/* Our Products Page */}
+        <Route path="/our-products" element={<OurProducts />} />
 
         {/* Pre-Order: hidden -> redirect to Home */}
         {SHOW_PREORDER ? (
