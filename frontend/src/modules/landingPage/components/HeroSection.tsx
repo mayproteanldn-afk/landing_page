@@ -95,7 +95,7 @@ export default function BeautifulWelcomeSection() {
                 </p>
               </div>
 
-              {/* Copy */}
+              {/* Copy + Signup */}
               <div className="max-w-2xl mx-auto md:mx-0 text-[#4B2C1A]">
                 <p className="text-lg md:text-[17px] xl:text-xl mb-3">
                   Your new favourite protein shake is about to taste like bubble tea.
