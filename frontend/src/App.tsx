@@ -44,53 +44,44 @@ function Navbar() {
     `${base} ${isActive ? active : ""}`;
 
   return (
-    // ✅ Key fix: navbar container doesn't block taps underneath
+    // ✅ Key fix: navbar container does NOT block taps/clicks on the page underneath
     <nav className="fixed top-6 inset-x-0 z-50 pointer-events-none">
-      {/* ✅ But the actual links remain clickable */}
-      <ul
-        className="
-          pointer-events-auto
-          mx-auto w-fit
-          flex flex-wrap items-start justify-center
-          gap-x-8 gap-y-3
-          md:flex-nowrap md:items-center md:gap-x-14 md:gap-y-0
-          px-4
-        "
-      >
-        <li className="leading-tight">
+      {/* ✅ But the actual list IS clickable */}
+      <ul className="pointer-events-auto mx-auto w-fit flex flex-wrap justify-center gap-x-8 gap-y-2 md:gap-x-14">
+        <li>
           <NavLink to="/" end className={linkClass}>
             Home
           </NavLink>
         </li>
 
-        <li className="leading-tight">
+        <li>
           <NavLink to="/our-products" className={linkClass}>
             Our Products
           </NavLink>
         </li>
 
+        <li>
+          <NavLink to="/about" className={linkClass}>
+            About
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink to="/secret" className={linkClass}>
+            Secret Access
+          </NavLink>
+        </li>
+
         {SHOW_FAQS && (
-          <li className="leading-tight">
+          <li>
             <NavLink to="/faqs" className={linkClass}>
               FAQs
             </NavLink>
           </li>
         )}
 
-        <li className="leading-tight">
-          <NavLink to="/about" className={linkClass}>
-            About
-          </NavLink>
-        </li>
-
-        <li className="leading-tight">
-          <NavLink to="/secret" className={linkClass}>
-            Secret Access
-          </NavLink>
-        </li>
-
         {SHOW_PREORDER && (
-          <li className="leading-tight">
+          <li>
             <NavLink to="/pre-order" className={linkClass}>
               Pre-Order
             </NavLink>
@@ -482,7 +473,7 @@ function Surprise() {
       try {
         document.execCommand("copy");
         setCopied(true);
-      } catch { }
+      } catch {}
       document.body.removeChild(ta);
       setTimeout(() => setCopied(false), 1600);
     }
