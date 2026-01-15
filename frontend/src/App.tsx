@@ -482,7 +482,7 @@ function Surprise() {
       try {
         document.execCommand("copy");
         setCopied(true);
-      } catch { }
+      } catch {}
       document.body.removeChild(ta);
       setTimeout(() => setCopied(false), 1600);
     }
