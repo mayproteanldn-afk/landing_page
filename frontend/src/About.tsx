@@ -46,37 +46,41 @@ export default function About() {
                         <div className="lg:col-span-7 lg:row-start-2">
                             <div className="rounded-2xl bg-white border border-[#D2D2D2] p-6 md:p-7 shadow-sm">
                                 <p className="text-lg md:text-xl">
-                                    We grew up loving bubble tea — and yes, we lift.
+                                    We grew up loving bubble tea - and yes, we work out.
                                 </p>
 
                                 <p className="text-lg md:text-xl mt-4">
-                                    Somewhere between post-gym protein shakes and late-night bubble tea
+                                    Somewhere between post-gym protein shakes and craving-led bubble tea
                                     runs, we realised something was missing. Why did “macros” always
-                                    mean boring flavours, and why did the flavours we actually loved
-                                    never fit our routines?
+                                    mean the same boring flavours, and why did the flavours we actually loved
+                                    never come in formats that fit our routines?
                                 </p>
 
                                 <p className="text-lg md:text-xl mt-4">
-                                    Protean LDN was born from that exact tension — a refusal to choose
-                                    between <em>liquid happiness</em> and progress.
+                                    Protean LDN was born from that exact frustration — a refusal to choose
+                                    between <em>liquid happiness</em> and achieving our wellness goals.
                                 </p>
 
                                 <p className="text-lg md:text-xl mt-4">
                                     Growing up in Asia, food is love… and commentary. Aunties have no
-                                    problem telling you what’s on your plate <em>and</em> what’s
-                                    happening to your body, often in the same sentence. It’s
+                                    problem telling you what’s on your plate <em>and</em> what they think
+                                    of your body, often in the same sentence. It’s
                                     well-meaning, but it sticks with you. Fitness later became a way
-                                    to feel strong, confident, and in control — but the supplement
-                                    aisle didn’t feel like home.
+                                    to feel strong, confident, and in control... but the supplements
+                                    available didn’t excite us, which often meant we didn't stick to our goals.
                                 </p>
 
                                 <p className="text-lg md:text-xl mt-4">
                                     So instead of settling for vanilla-everything, we decided to build
                                     what we wished existed:{" "}
                                     <strong>
-                                        Asian-inspired, real tea–infused protein powders that taste like
-                                        your favourite bubble teas and still support your goals.
+                                        Asian-inspired, real tea–infused protein powders that taste just like
+                                        your favourite bubble teas and still aligns with a healthy lifestyle.
                                     </strong>
+                                </p>
+
+                                <p className="text-lg md:text-xl mt-4">
+                                    <em>This is just the beginning...</em>
                                 </p>
                             </div>
 
