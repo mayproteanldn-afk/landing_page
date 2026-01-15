@@ -45,42 +45,49 @@ function Navbar() {
 
   return (
     <nav className="fixed top-6 inset-x-0 z-50">
-      <ul className="mx-auto w-fit flex space-x-8 md:space-x-14">
-        {/* ✅ Order: Home → Our Products → About → Secret Access */}
-        <li>
+      <ul
+        className="
+          mx-auto w-fit
+          flex flex-wrap items-start justify-center
+          gap-x-8 gap-y-3
+          md:flex-nowrap md:items-center md:gap-x-14 md:gap-y-0
+          px-4
+        "
+      >
+        <li className="leading-tight">
           <NavLink to="/" end className={linkClass}>
             Home
           </NavLink>
         </li>
 
-        <li>
+        <li className="leading-tight">
           <NavLink to="/our-products" className={linkClass}>
             Our Products
           </NavLink>
         </li>
 
-        <li>
-          <NavLink to="/about" className={linkClass}>
-            About
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink to="/secret" className={linkClass}>
-            Secret Access
-          </NavLink>
-        </li>
-
         {SHOW_FAQS && (
-          <li>
+          <li className="leading-tight">
             <NavLink to="/faqs" className={linkClass}>
               FAQs
             </NavLink>
           </li>
         )}
 
+        <li className="leading-tight">
+          <NavLink to="/about" className={linkClass}>
+            About
+          </NavLink>
+        </li>
+
+        <li className="leading-tight">
+          <NavLink to="/secret" className={linkClass}>
+            Secret Access
+          </NavLink>
+        </li>
+
         {SHOW_PREORDER && (
-          <li>
+          <li className="leading-tight">
             <NavLink to="/pre-order" className={linkClass}>
               Pre-Order
             </NavLink>
@@ -472,7 +479,7 @@ function Surprise() {
       try {
         document.execCommand("copy");
         setCopied(true);
-      } catch {}
+      } catch { }
       document.body.removeChild(ta);
       setTimeout(() => setCopied(false), 1600);
     }
