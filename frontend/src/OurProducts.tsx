@@ -153,14 +153,14 @@ export default function OurProducts() {
                 {/* Products */}
                 <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
                     <ProductTile
-                        title="Matcha latte using ceremonial matcha"
+                        title="Matcha Latte"
                         imageSrc={matchaTile}
                         badgeText="Made with ceremonial matcha"
                         macros={macrosMatcha}
                     />
 
                     <ProductTile
-                        title="Brown sugar milk tea"
+                        title="Brown Sugar Milk Tea"
                         imageSrc={brownSugarTile}
                         badgeText="Made with real tea"
                         macros={macrosBrownSugar}
