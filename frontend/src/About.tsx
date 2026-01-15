@@ -42,8 +42,19 @@ export default function About() {
                             </h1>
                         </div>
 
-                        {/* Left: white card + link */}
+                        {/* Left column content (now includes image first) */}
                         <div className="lg:col-span-7 lg:row-start-2">
+                            {/* Image moved before the text, ~20% smaller but responsive */}
+                            <div className="rounded-2xl overflow-hidden border border-[#D2D2D2] bg-[#FCFAF7] p-3 md:p-4 mb-8">
+                                <img
+                                    src={aboutHero}
+                                    alt="Unbranded shaker with matcha liquid and soft shadow"
+                                    className="w-full h-auto object-contain mx-auto"
+                                    style={{ maxWidth: "80%" }} // ~20% smaller, stays responsive
+                                    loading="lazy"
+                                />
+                            </div>
+
                             <div className="rounded-2xl bg-white border border-[#D2D2D2] p-6 md:p-7 shadow-sm">
                                 <p className="text-lg md:text-xl">
                                     We grew up loving bubble tea - and yes, we work out.
@@ -64,10 +75,10 @@ export default function About() {
                                 <p className="text-lg md:text-xl mt-4">
                                     Growing up in Asia, food is love… and commentary. Aunties have no
                                     problem telling you what’s on your plate <em>and</em> what they think
-                                    of your body, often in the same sentence. It’s
-                                    well-meaning, but it sticks with you. Fitness later became a way
-                                    to feel strong, confident, and in control... but the supplements
-                                    available didn’t excite us, which often meant we didn't stick to our goals.
+                                    of your body, often in the same sentence. It’s well-meaning, but it sticks
+                                    with you. Fitness later became a way to feel strong, confident, and in
+                                    control... but the supplements available didn’t excite us, which often meant
+                                    we didn't stick to our goals.
                                 </p>
 
                                 <p className="text-lg md:text-xl mt-4">
@@ -92,17 +103,7 @@ export default function About() {
                             </a>
                         </div>
 
-                        {/* Right: visual */}
-                        <div className="lg:col-span-5 lg:row-start-2 lg:self-start mt-8 md:mt-10 lg:mt-0">
-                            <div className="rounded-2xl overflow-hidden border border-[#D2D2D2] bg-[#FCFAF7] p-3 md:p-4">
-                                <img
-                                    src={aboutHero}
-                                    alt="Unbranded shaker with matcha liquid and soft shadow"
-                                    className="w-full h-auto object-contain max-h-[26rem] md:max-h-[32rem] mx-auto"
-                                    loading="lazy"
-                                />
-                            </div>
-                        </div>
+                        {/* Right: visual REMOVED (since image is now on the left) */}
                     </div>
 
                     {/* What we make */}
@@ -112,17 +113,15 @@ export default function About() {
                         </h2>
 
                         <div className="rounded-xl bg-white border border-[#D2D2D2] p-5 md:p-6 text-[#5A605E] text-lg md:text-xl">
-                            Supplements inspired by beloved bubble tea flavours, with all of the
-                            flavour <em>and</em> nutritional benefits.
+                            Supplements inspired by beloved bubble tea flavours, with all of the flavour{" "}
+                            <em>and</em> nutritional benefits.
                         </div>
                     </section>
 
                     {/* CTA */}
                     <section className="mt-10 md:mt-12">
                         <div className="rounded-2xl bg-[#FCFAF7] border border-[#D2D2D2] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
-                            <p className="text-lg md:text-xl">
-                                Want first access and secret discounts?
-                            </p>
+                            <p className="text-lg md:text-xl">Want first access and secret discounts?</p>
                             <a
                                 href="/"
                                 className="inline-flex items-center justify-center rounded-full px-6 py-3 text-white"
