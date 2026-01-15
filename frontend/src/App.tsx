@@ -12,7 +12,6 @@ import About from "./About";
 import OurProducts from "./OurProducts";
 import TheWellnessDrive from "./TheWellnessDrive";
 
-
 // same background as Home
 import bgImage from "./assets/bg.jpg";
 // your logo for the subpages (top-left)
@@ -37,7 +36,8 @@ const MAINTENANCE =
 
 /* -------------------- Top-right navbar -------------------- */
 function Navbar() {
-  const base = "text-[#A06C4D] tracking-wide transition-colors text-lg md:text-xl";
+  const base =
+    "text-[#A06C4D] tracking-wide transition-colors text-lg md:text-xl";
   const active = "font-semibold";
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
@@ -46,23 +46,10 @@ function Navbar() {
   return (
     <nav className="fixed top-6 inset-x-0 z-50">
       <ul className="mx-auto w-fit flex space-x-8 md:space-x-14">
+        {/* ✅ Order: Home → Our Products → About → Secret Access */}
         <li>
           <NavLink to="/" end className={linkClass}>
             Home
-          </NavLink>
-        </li>
-
-        {SHOW_FAQS && (
-          <li>
-            <NavLink to="/faqs" className={linkClass}>
-              FAQs
-            </NavLink>
-          </li>
-        )}
-
-        <li>
-          <NavLink to="/about" className={linkClass}>
-            About
           </NavLink>
         </li>
 
@@ -73,10 +60,24 @@ function Navbar() {
         </li>
 
         <li>
+          <NavLink to="/about" className={linkClass}>
+            About
+          </NavLink>
+        </li>
+
+        <li>
           <NavLink to="/secret" className={linkClass}>
             Secret Access
           </NavLink>
         </li>
+
+        {SHOW_FAQS && (
+          <li>
+            <NavLink to="/faqs" className={linkClass}>
+              FAQs
+            </NavLink>
+          </li>
+        )}
 
         {SHOW_PREORDER && (
           <li>
@@ -178,7 +179,8 @@ function SecretAccess() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const SECRET = (import.meta as any).env?.VITE_SECRET_ACCESS_PW || "ilyproteinboba";
+  const SECRET =
+    (import.meta as any).env?.VITE_SECRET_ACCESS_PW || "ilyproteinboba";
 
   function handleUnlock(e: React.FormEvent) {
     e.preventDefault();
@@ -285,7 +287,9 @@ function SecretAccess() {
           <h1 className="display-font !font-normal text-5xl md:text-6xl font-extrabold leading-tight">
             Welcome to the land of gains and flavour
           </h1>
-          <p className="mt-4 text-lg opacity-90">Pop in your details to confirm access.</p>
+          <p className="mt-4 text-lg opacity-90">
+            Pop in your details to confirm access.
+          </p>
 
           <form
             onSubmit={handleFormSubmit}
@@ -324,7 +328,9 @@ function SecretAccess() {
               </div>
             </div>
 
-            {formError && <p className="mt-3 text-sm text-red-700">{formError}</p>}
+            {formError && (
+              <p className="mt-3 text-sm text-red-700">{formError}</p>
+            )}
 
             <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
               <button
@@ -355,7 +361,9 @@ function SecretAccess() {
           <h1 className="display-font !font-normal text-4xl md:text-5xl font-extrabold mb-4">
             You’re in 🎉
           </h1>
-          <p className="text-lg">You're in, keep an eye out on your inbox for a surprise ;)</p>
+          <p className="text-lg">
+            You're in, keep an eye out on your inbox for a surprise ;)
+          </p>
           <button
             className="mt-8 rounded-xl px-6 py-3 font-semibold text-white"
             style={{ background: "#5e8c31" }}
@@ -408,7 +416,15 @@ function MaintenancePage() {
           viewBox="0 0 24 24"
           stroke="#4B2C1A"
         >
-          <rect width="20" height="20" x="2" y="2" rx="5" ry="5" strokeWidth="2" />
+          <rect
+            width="20"
+            height="20"
+            x="2"
+            y="2"
+            rx="5"
+            ry="5"
+            strokeWidth="2"
+          />
           <circle cx="12" cy="12" r="4" strokeWidth="2" />
           <circle cx="18" cy="6" r="1.5" fill="#4B2C1A" />
         </svg>
@@ -456,7 +472,7 @@ function Surprise() {
       try {
         document.execCommand("copy");
         setCopied(true);
-      } catch { }
+      } catch {}
       document.body.removeChild(ta);
       setTimeout(() => setCopied(false), 1600);
     }
@@ -475,7 +491,8 @@ function Surprise() {
           </h1>
 
           <p className="mt-3 text-center opacity-90">
-            Use this secret password on our access page to unlock an exclusive discount when we launch.
+            Use this secret password on our access page to unlock an exclusive
+            discount when we launch.
           </p>
 
           <div className="mt-5 flex gap-3 items-stretch">
@@ -530,7 +547,6 @@ export default function App() {
         ) : (
           <Route path="/faqs" element={<Navigate to="/" replace />} />
         )}
-
 
         {/* Our Products */}
         <Route path="/our-products" element={<OurProducts />} />
