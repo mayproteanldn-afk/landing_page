@@ -121,7 +121,7 @@ export default function OurProducts() {
                     <h1 className="display-font !font-normal text-5xl md:text-6xl font-extrabold mb-3">
                         Your bubble tea cravings,
                         <br className="hidden sm:block" />
-                        but make it friendly to your fitness goals.
+                        but make it macros.
                     </h1>
 
                     {/* Blend + dietary copy */}
