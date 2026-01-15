@@ -57,7 +57,7 @@ export default function About() {
                                 </p>
 
                                 <p className="text-lg md:text-xl mt-4">
-                                    Protean LDN was born from that exact frustration — a refusal to choose
+                                    Protean LDN was born from that exact frustration - a refusal to choose
                                     between <em>liquid happiness</em> and achieving our wellness goals.
                                 </p>
 
