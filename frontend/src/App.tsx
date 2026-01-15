@@ -44,9 +44,12 @@ function Navbar() {
     `${base} ${isActive ? active : ""}`;
 
   return (
-    <nav className="fixed top-6 inset-x-0 z-50">
+    // ✅ Key fix: navbar container doesn't block taps underneath
+    <nav className="fixed top-6 inset-x-0 z-50 pointer-events-none">
+      {/* ✅ But the actual links remain clickable */}
       <ul
         className="
+          pointer-events-auto
           mx-auto w-fit
           flex flex-wrap items-start justify-center
           gap-x-8 gap-y-3
