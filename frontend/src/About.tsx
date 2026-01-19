@@ -34,76 +34,80 @@ export default function About() {
                 <div className="max-w-6xl mx-auto text-left text-[#4B2C1A]">
                     {/* Our why */}
                     <div className="grid lg:grid-cols-12 lg:grid-rows-[auto_1fr] gap-10 mt-2">
-                        {/* Left: heading */}
-                        <div className="lg:col-span-7 lg:row-start-1">
+                        {/* Heading */}
+                        <div className="lg:col-span-12 lg:row-start-1">
                             <p className="text-sm opacity-70 mb-3">About Protean LDN</p>
                             <h1 className="display-font !font-normal text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
                                 Our why
                             </h1>
                         </div>
 
-                        {/* Left column content (now includes image first) */}
-                        <div className="lg:col-span-7 lg:row-start-2">
-                            {/* Image moved before the text, ~20% smaller but responsive */}
-                            <div className="rounded-2xl overflow-hidden border border-[#D2D2D2] bg-[#FCFAF7] p-3 md:p-4 mb-8">
-                                <img
-                                    src={aboutHero}
-                                    alt="Unbranded shaker with matcha liquid and soft shadow"
-                                    className="w-full h-auto object-contain mx-auto"
-                                    style={{ maxWidth: "80%" }} // ~20% smaller, stays responsive
-                                    loading="lazy"
-                                />
+                        {/* Image + text layout */}
+                        <div className="lg:col-span-12 lg:row-start-2">
+                            <div className="flex flex-col lg:flex-row lg:items-start lg:gap-8">
+                                {/* Image block */}
+                                <div className="lg:w-5/12">
+                                    <div className="rounded-2xl overflow-hidden border border-[#D2D2D2] bg-[#FCFAF7] p-3 md:p-4 mb-8 lg:mb-0">
+                                        <img
+                                            src={aboutHero}
+                                            alt="Unbranded shaker with matcha liquid and soft shadow"
+                                            className="w-full h-auto object-contain mx-auto max-w-[80%] lg:max-w-full"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Text card */}
+                                <div className="lg:w-7/12">
+                                    <div className="rounded-2xl bg-white border border-[#D2D2D2] p-6 md:p-7 shadow-sm">
+                                        <p className="text-lg md:text-xl">
+                                            We grew up loving bubble tea - and yes, we work out.
+                                        </p>
+
+                                        <p className="text-lg md:text-xl mt-4">
+                                            Somewhere between post-gym protein shakes and craving-led bubble tea
+                                            runs, we realised something was missing. Why did “macros” always
+                                            mean the same boring flavours, and why did the flavours we actually loved
+                                            never come in formats that fit our routines?
+                                        </p>
+
+                                        <p className="text-lg md:text-xl mt-4">
+                                            Protean LDN was born from that exact frustration - a refusal to choose
+                                            between <em>liquid happiness</em> and achieving our wellness goals.
+                                        </p>
+
+                                        <p className="text-lg md:text-xl mt-4">
+                                            Growing up in Asia, food is love… and commentary. Aunties have no
+                                            problem telling you what’s on your plate <em>and</em> what they think
+                                            of your body, often in the same sentence. It’s well-meaning, but it sticks
+                                            with you. Fitness later became a way to feel strong, confident, and in
+                                            control... but the supplements available didn’t excite us, which often meant
+                                            we didn't stick to our goals.
+                                        </p>
+
+                                        <p className="text-lg md:text-xl mt-4">
+                                            So instead of settling for vanilla-everything, we decided to build
+                                            what we wished existed:{" "}
+                                            <strong>
+                                                Asian-inspired, real tea–infused protein powders that taste just like
+                                                your favourite bubble teas and still aligns with a healthy lifestyle.
+                                            </strong>
+                                        </p>
+
+                                        <p className="text-lg md:text-xl mt-4">
+                                            <em>This is just the beginning...</em>
+                                        </p>
+                                    </div>
+
+                                    <a
+                                        href="/"
+                                        className="inline-block mt-4 text-[#5e8c31] underline underline-offset-4"
+                                    >
+                                        Join the waitlist →
+                                    </a>
+                                </div>
                             </div>
-
-                            <div className="rounded-2xl bg-white border border-[#D2D2D2] p-6 md:p-7 shadow-sm">
-                                <p className="text-lg md:text-xl">
-                                    We grew up loving bubble tea - and yes, we work out.
-                                </p>
-
-                                <p className="text-lg md:text-xl mt-4">
-                                    Somewhere between post-gym protein shakes and craving-led bubble tea
-                                    runs, we realised something was missing. Why did “macros” always
-                                    mean the same boring flavours, and why did the flavours we actually loved
-                                    never come in formats that fit our routines?
-                                </p>
-
-                                <p className="text-lg md:text-xl mt-4">
-                                    Protean LDN was born from that exact frustration - a refusal to choose
-                                    between <em>liquid happiness</em> and achieving our wellness goals.
-                                </p>
-
-                                <p className="text-lg md:text-xl mt-4">
-                                    Growing up in Asia, food is love… and commentary. Aunties have no
-                                    problem telling you what’s on your plate <em>and</em> what they think
-                                    of your body, often in the same sentence. It’s well-meaning, but it sticks
-                                    with you. Fitness later became a way to feel strong, confident, and in
-                                    control... but the supplements available didn’t excite us, which often meant
-                                    we didn't stick to our goals.
-                                </p>
-
-                                <p className="text-lg md:text-xl mt-4">
-                                    So instead of settling for vanilla-everything, we decided to build
-                                    what we wished existed:{" "}
-                                    <strong>
-                                        Asian-inspired, real tea–infused protein powders that taste just like
-                                        your favourite bubble teas and still aligns with a healthy lifestyle.
-                                    </strong>
-                                </p>
-
-                                <p className="text-lg md:text-xl mt-4">
-                                    <em>This is just the beginning...</em>
-                                </p>
-                            </div>
-
-                            <a
-                                href="/"
-                                className="inline-block mt-4 text-[#5e8c31] underline underline-offset-4"
-                            >
-                                Join the waitlist →
-                            </a>
                         </div>
-
-                        {/* Right: visual REMOVED (since image is now on the left) */}
                     </div>
 
                     {/* What we make */}
