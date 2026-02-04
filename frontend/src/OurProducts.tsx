@@ -141,7 +141,7 @@ export default function OurProducts() {
                                 Lactose-free
                             </span>
                             <span className="rounded-full bg-[#FFFCF3] border border-[#D2D2D2] px-4 py-2 text-sm font-semibold text-[#4B2C1A]">
-                                Real tea–inspired flavours
+                                Real tea-inspired flavours
                             </span>
                             <span className="rounded-full bg-[#FFFCF3] border border-[#D2D2D2] px-4 py-2 text-sm font-semibold text-[#4B2C1A]">
                                 Shake-friendly texture
