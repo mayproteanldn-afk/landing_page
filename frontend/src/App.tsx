@@ -1,3 +1,5 @@
+// frontend/src/App.tsx
+
 import {
   Routes,
   Route,
@@ -44,9 +46,9 @@ function Navbar() {
     `${base} ${isActive ? active : ""}`;
 
   return (
-    // ✅ Key fix: navbar container does NOT block taps/clicks on the page underneath
+    // ✅ Navbar container doesn't block taps underneath
     <nav className="fixed top-6 inset-x-0 z-50 pointer-events-none">
-      {/* ✅ But the actual list IS clickable */}
+      {/* ✅ Only the list is clickable */}
       <ul className="pointer-events-auto mx-auto w-fit flex flex-wrap justify-center gap-x-8 gap-y-2 md:gap-x-14">
         <li>
           <NavLink to="/" end className={linkClass}>
@@ -66,11 +68,7 @@ function Navbar() {
           </NavLink>
         </li>
 
-        <li>
-          <NavLink to="/secret" className={linkClass}>
-            Secret Access
-          </NavLink>
-        </li>
+        {/* 👇 Secret Access tab removed on purpose – route still exists */}
 
         {SHOW_FAQS && (
           <li>
@@ -177,8 +175,7 @@ function SecretAccess() {
   React.useEffect(() => {
     const incoming = location?.state?.prefillPw;
     if (incoming) setPw(incoming);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [location?.state?.prefillPw]);
 
   const SECRET =
     (import.meta as any).env?.VITE_SECRET_ACCESS_PW || "ilyproteinboba";
@@ -473,7 +470,9 @@ function Surprise() {
       try {
         document.execCommand("copy");
         setCopied(true);
-      } catch {}
+      } catch {
+        /* ignore */
+      }
       document.body.removeChild(ta);
       setTimeout(() => setCopied(false), 1600);
     }
@@ -555,7 +554,7 @@ export default function App() {
         {/* About */}
         <Route path="/about" element={<About />} />
 
-        {/* Secret Access */}
+        {/* Secret Access (still live, just not in navbar) */}
         <Route path="/secret" element={<SecretAccess />} />
 
         {/* Pre-Order: hidden -> redirect to Home */}
