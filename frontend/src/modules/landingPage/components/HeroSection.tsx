@@ -1,3 +1,5 @@
+// frontend/src/modules/landingPage/components/HeroSection.tsx
+
 import { useState } from "react";
 
 // Assets
@@ -105,7 +107,7 @@ export default function BeautifulWelcomeSection() {
                   BUBBLE TEA?
                 </h2>
 
-                {/* ✅ YES PLEASE + INSTAGRAM INLINE */}
+                {/* YES PLEASE + INSTAGRAM INLINE */}
                 <div className="flex items-center justify-center md:justify-start gap-3 mt-2">
                   <p className="italic text-[#4B2C1A] text-2xl md:text-3xl">
                     Yes please.
@@ -152,7 +154,7 @@ export default function BeautifulWelcomeSection() {
                     placeholder="First name"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    className="flex-1 px-6 py-4 rounded-full bg-[#FFFCF3] text-[#4B2C1A]"
+                    className="flex-1 px-6 py-3 rounded-full bg-[#FFFCF3] text-[#4B2C1A]"
                   />
 
                   <input
@@ -160,13 +162,13 @@ export default function BeautifulWelcomeSection() {
                     placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 px-6 py-4 rounded-full bg-[#013220] text-[#FFFCF3]"
+                    className="flex-1 px-6 py-3 rounded-full bg-[#013220] text-[#FFFCF3]"
                   />
 
                   <button
                     onClick={handleSubscribe}
                     disabled={status === "loading"}
-                    className="px-6 py-4 rounded-full border-2 border-[#4B2C1A] bg-[#FFFCF3] text-[#4B2C1A] font-semibold"
+                    className="px-6 py-3 whitespace-nowrap rounded-full border-2 border-[#4B2C1A] bg-[#FFFCF3] text-[#4B2C1A] font-semibold"
                   >
                     {status === "loading" ? "Adding..." : "Get me in"}
                   </button>
