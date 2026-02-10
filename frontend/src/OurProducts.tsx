@@ -40,12 +40,13 @@ function ProductTile({
     return (
         <div className="rounded-3xl bg-white/85 backdrop-blur border border-[#D2D2D2] shadow-2xl overflow-hidden">
             <div className="p-6 md:p-7">
-                <div className="flex items-start justify-between gap-4">
+                {/* Title + badge stacked + centred */}
+                <div className="flex flex-col items-center text-center gap-3">
                     <h2 className="display-font !font-normal text-3xl md:text-4xl font-extrabold text-[#4B2C1A] leading-tight">
                         {title}
                     </h2>
 
-                    <span className="shrink-0 rounded-full border border-[#D2D2D2] bg-[#FFFCF3] px-4 py-2 text-xs md:text-sm font-semibold text-[#4B2C1A]">
+                    <span className="rounded-full border border-[#D2D2D2] bg-[#FFFCF3] px-4 py-2 text-xs md:text-sm font-semibold text-[#4B2C1A]">
                         {badgeText}
                     </span>
                 </div>
