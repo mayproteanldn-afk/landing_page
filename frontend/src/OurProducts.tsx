@@ -135,7 +135,7 @@ export default function OurProducts() {
                             stuff you actually crave.
                         </p>
 
-                        <div className="mt-4 flex flex-wrap gap-3">
+                        <div className="mt-4 flex flex-wrap justify-center gap-3">
                             <span className="rounded-full bg-[#FFFCF3] border border-[#D2D2D2] px-4 py-2 text-sm font-semibold text-[#4B2C1A]">
                                 Lactose-free
                             </span>
