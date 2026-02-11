@@ -162,7 +162,7 @@ export default function OurProducts() {
                     <ProductTile
                         title="Brown Sugar Milk Tea"
                         imageSrc={brownSugarTile}
-                        badgeText="Made with real tea"
+                        badgeText="Made with real black tea"
                         macros={macrosBrownSugar}
                     />
                 </div>
