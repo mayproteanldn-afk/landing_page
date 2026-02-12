@@ -155,14 +155,14 @@ export default function OurProducts() {
                     <ProductTile
                         title="Matcha Latte"
                         imageSrc={matchaTile}
-                        badgeText="Made with ceremonial matcha"
+                        badgeText="Made with Ceremonial Matcha"
                         macros={macrosMatcha}
                     />
 
                     <ProductTile
                         title="Brown Sugar Milk Tea"
                         imageSrc={brownSugarTile}
-                        badgeText="Made with real black tea"
+                        badgeText="Made with Real Black Tea"
                         macros={macrosBrownSugar}
                     />
                 </div>
