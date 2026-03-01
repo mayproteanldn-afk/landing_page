@@ -95,7 +95,7 @@ export default function BeautifulWelcomeSection() {
             <div className="order-1 md:order-2 text-center md:text-left mt-6 md:mt-10">
               {/* Launch line */}
               <p className="text-sm tracking-wider text-[#4B2C1A] mb-4">
-                LAUNCHING MARCH 2026
+                LAUNCHING MAY 2026
               </p>
 
               {/* HEADLINE */}
