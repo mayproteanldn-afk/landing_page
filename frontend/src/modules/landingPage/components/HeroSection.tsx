@@ -75,8 +75,8 @@ export default function BeautifulWelcomeSection() {
       >
         <div className="flex-1 mx-auto max-w-7xl px-6 pt-6 md:pt-8 pb-1">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
-            {/* VIDEO */}
-            <div className="order-2 md:order-1 mt-6 md:mt-10">
+            {/* DESKTOP VIDEO ONLY */}
+            <div className="hidden md:block md:order-1 md:mt-10">
               <div className="w-full rounded-xl overflow-hidden">
                 <video
                   className="block w-full h-auto object-contain"
@@ -92,7 +92,7 @@ export default function BeautifulWelcomeSection() {
             </div>
 
             {/* CONTENT */}
-            <div className="order-1 md:order-2 text-center md:text-left mt-6 md:mt-10">
+            <div className="order-1 md:order-2 text-center md:text-left mt-10 md:mt-10">
               {/* Launch line */}
               <p className="text-sm tracking-wider text-[#4B2C1A] mb-4">
                 LAUNCHING SUMMER 2026
@@ -100,10 +100,10 @@ export default function BeautifulWelcomeSection() {
 
               {/* HEADLINE */}
               <div className="display-font leading-[0.9] mb-5">
-                <h1 className="text-[#4B2C1A] font-black text-6xl md:text-7xl xl:text-8xl">
+                <h1 className="text-[#4B2C1A] font-black text-5xl md:text-6xl xl:text-7xl">
                   PROTEIN
                 </h1>
-                <h2 className="text-[#2F7A43] font-black text-6xl md:text-7xl xl:text-8xl">
+                <h2 className="text-[#2F7A43] font-black text-5xl md:text-6xl xl:text-7xl">
                   BUBBLE TEA?
                 </h2>
 
@@ -136,6 +136,22 @@ export default function BeautifulWelcomeSection() {
                 </div>
               </div>
 
+              {/* MOBILE VIDEO ONLY */}
+              <div className="md:hidden mt-6 mb-6">
+                <div className="w-full rounded-xl overflow-hidden">
+                  <video
+                    className="block w-full h-auto object-contain"
+                    src={videoSrc}
+                    poster={heroPoster}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                  />
+                </div>
+              </div>
+
               {/* COPY */}
               <div className="max-w-2xl mx-auto md:mx-0 text-[#4B2C1A]">
                 <p className="text-lg md:text-xl mb-3">
@@ -154,7 +170,7 @@ export default function BeautifulWelcomeSection() {
                     placeholder="First name"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    className="flex-1 px-6 py-3 rounded-full bg-[#FFFCF3] text-[#4B2C1A]"
+                    className="flex-1 px-6 py-3 rounded-full bg-[#FFFCF3] text-[#4B2C1A] border-2 border-[#4B2C1A]"
                   />
 
                   <input
