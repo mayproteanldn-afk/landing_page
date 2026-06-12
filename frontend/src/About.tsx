@@ -84,7 +84,7 @@ export default function About() {
                         <SectionCard title="Liquid happiness vs. your dream bod">
                             <p>
                                 We grew up loving bubble tea. We also work out.
-                                But the two didn't really work well together...
+                                But the two didn't really work well together since ONE serving of bubble tea has around 300-600 calories...
                                 Whilst glugging down a vanilla protein shake
                                 that tasted like feet-shavings for the 100th time,
                                 we hit a wall: why did “macros” always mean the SAME boring
