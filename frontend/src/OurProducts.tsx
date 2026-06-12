@@ -119,7 +119,7 @@ export default function OurProducts() {
                         OUR PRODUCTS
                     </p>
                     <h1 className="display-font !font-normal text-5xl md:text-6xl font-extrabold mb-3">
-                        Your bubble tea cravings,
+                        Your bubble tea cravings, 
                         <br className="hidden sm:block" />
                         but make it macro-friendly.
                     </h1>
