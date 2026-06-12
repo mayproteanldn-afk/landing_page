@@ -75,15 +75,15 @@ export default function OurProducts() {
     const commonProtein = "22g";
 
     const macrosBrownSugar: Macro[] = [
+        { label: "Calories", value: "120 kcal" },
         { label: "Protein", value: commonProtein },
-        { label: "Calories", value: "117 kcal" },
         { label: "Carbs", value: "3.6g" },
         { label: "Fats", value: "1.4g" },
     ];
 
     const macrosMatcha: Macro[] = [
+        { label: "Calories", value: "120 kcal" },
         { label: "Protein", value: commonProtein },
-        { label: "Calories", value: "116 kcal" },
         { label: "Carbs", value: "3.7g" },
         { label: "Fats", value: "1.3g" },
     ];
