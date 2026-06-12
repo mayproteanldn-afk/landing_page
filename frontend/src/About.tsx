@@ -111,8 +111,8 @@ export default function About() {
                         <SectionCard title="Aunties have entered the chat">
                             <p>
                                 Growing up in Asia, food is love… and commentary. Aunties
-                                will tell you you're not eating enough, and what they think of
-                                your body, often in the same breath.
+                                will simultaneously tell you you're not eating enough AND what they think of
+                                your body.
                             </p>
 
                             <p className="mt-4">
