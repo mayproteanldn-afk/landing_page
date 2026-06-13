@@ -119,9 +119,7 @@ export default function OurProducts() {
                         OUR PRODUCTS
                     </p>
                     <h1 className="display-font !font-normal text-5xl md:text-6xl font-extrabold mb-3">
-                        Your bubble tea cravings, 
-                        <br className="hidden sm:block" />
-                        but make it macro-friendly.
+                        Say goodbye to your current protein powders
                     </h1>
 
                     {/* Blend + dietary copy */}
@@ -131,7 +129,6 @@ export default function OurProducts() {
                             <strong className="text-[#4B2C1A]">
                                 premium whey protein blend
                             </strong>{" "}
-                            (of Whey Protein Concentrate and Whey Protein Isolate)
                             - smooth, satisfying, and designed to taste like the
                             stuff you actually crave.
                         </p>
@@ -141,10 +138,10 @@ export default function OurProducts() {
                                 Lactose-free
                             </span>
                             <span className="rounded-full bg-[#FFFCF3] border border-[#D2D2D2] px-4 py-2 text-sm font-semibold text-[#4B2C1A]">
-                                Real tea-inspired flavours
+                                Real tea
                             </span>
                             <span className="rounded-full bg-[#FFFCF3] border border-[#D2D2D2] px-4 py-2 text-sm font-semibold text-[#4B2C1A]">
-                                Shake-friendly texture
+                                Single serving sachets
                             </span>
                         </div>
                     </div>
