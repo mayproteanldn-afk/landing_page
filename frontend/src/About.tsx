@@ -92,7 +92,7 @@ export default function About() {
                             </p>
 
                             <p className="mt-4">
-                                <strong>Protean is the answer.</strong> Liquid happiness,
+                                <strong>What we're building is the answer.</strong> Flavour, macros, and culture,
                                 no compromise.
                             </p>
                         </SectionCard>
