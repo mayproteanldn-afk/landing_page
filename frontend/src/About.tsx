@@ -92,7 +92,7 @@ export default function About() {
                             </p>
 
                             <p className="mt-4">
-                                <strong>What we're building is the answer.</strong> Flavour, macros, and culture,
+                                <strong>What we're building is the answer.</strong> Taste, macros, and culture,
                                 no compromise.
                             </p>
                         </SectionCard>
@@ -111,13 +111,13 @@ export default function About() {
                         <SectionCard title="Aunties have entered the chat">
                             <p>
                                 Growing up in Asia, food is love… and commentary. Aunties
-                                will simultaneously tell you you're not eating enough AND that you're getting "too big".
+                                will simultaneously tell you you're not eating enough and that you're getting "too big".
                             </p>
 
                             <p className="mt-4">
                                 Fitness became our way to feel strong and in control, but
                                 the supplements out there never excited us enough for us to actually stick
-                                with it.
+                                with it, and when you're working out 3-5x a week, you deserve supplements that will help you maximise that ROI.
                             </p>
                         </SectionCard>
                     </div>
@@ -146,7 +146,7 @@ export default function About() {
                             </ul>
 
                             <p className="mt-4">
-                                Lactose-free, macros without compromise.
+                                Lactose-free, great macros, and doesn't taste like a protein shake.
                             </p>
                         </SectionCard>
                     </div>
@@ -157,7 +157,7 @@ export default function About() {
                         </h2>
 
                         <div className="rounded-xl bg-white border border-[#D2D2D2] p-5 md:p-6 text-[#5A605E] text-lg md:text-xl">
-                            Supplements inspired by beloved bubble tea flavours, with all of
+                            Supplements inspired by beloved Asian drinks, with all of
                             the flavour <em>and</em> nutritional benefits.
                         </div>
                     </section>

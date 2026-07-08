@@ -155,11 +155,11 @@ export default function BeautifulWelcomeSection() {
               {/* COPY */}
               <div className="max-w-2xl mx-auto md:mx-0 text-[#4B2C1A]">
                 <p className="text-lg md:text-xl mb-3">
-                  Your new favourite protein shake is about to taste like bubble
-                  tea. Real tea, real benefits.
+                  Your new protein shake is about to taste like your favourite bubble
+                  teas. Real tea, real benefits.
                 </p>
                 <p className="italic text-lg md:text-xl mb-6">
-                  Sign up to our waitlist now for priority access and secret
+                  Sign up to our waitlist now for priority access and exclusive
                   discount codes.
                 </p>
 

@@ -168,8 +168,8 @@ export default function OurProducts() {
                 <div className="mt-10 text-center">
                     <div className="inline-flex items-center justify-center rounded-full bg-white/85 backdrop-blur border border-[#D2D2D2] shadow-sm px-6 py-3 text-[#4B2C1A]">
                         <span className="font-semibold">
-                            Single-serving sachets for satisfying your bubble tea
-                            cravings on the go
+                            Single-serving sachets for hitting your protein
+                            goals on the go
                         </span>
                     </div>
                 </div>
