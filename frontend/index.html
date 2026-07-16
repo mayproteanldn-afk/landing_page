@@ -9,7 +9,7 @@
     <meta name="description" content="Real tea–infused protein powders that taste just like your favourite bubble teas, with 22g of protein per serving. Launching with Matcha Latte and Brown Sugar Milk Tea. Oh and did we mention that our blends are lactose-free?" />
     <link rel="canonical" href="https://www.proteanldn.co.uk/" />
 
-    <!-- ✅ Favicon (your file in frontend/public) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
@@ -29,14 +29,21 @@
 
     <!-- Simple font helpers -->
     <style>
-      :root{
-        --brand-brown:#4B2C1A;
-        --brand-green:#2F7A43;
+      :root {
+        --brand-brown: #4B2C1A;
+        --brand-green: #2F7A43;
       }
-      body{ font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-      .display-font{ font-family: 'Fraunces', serif; }
+
+      body {
+        font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      .display-font {
+        font-family: 'Fraunces', serif;
+      }
     </style>
   </head>
+
   <body class="min-h-screen bg-[#FFFCF3]">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
